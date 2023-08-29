@@ -1,0 +1,1 @@
+import{_ as e,o as a,c as r,S as n}from"./chunks/framework.4e944e74.js";const b=JSON.parse('{"title":"Visión General","description":"","frontmatter":{},"headers":[],"relativePath":"pwa/intro.md","filePath":"pwa/intro.md"}'),i={name:"pwa/intro.md"},s=n("",51),o=[s];function t(l,d,c,p,u,m){return a(),r("div",null,o)}const f=e(i,[["render",t]]);export{b as __pageData,f as default};
