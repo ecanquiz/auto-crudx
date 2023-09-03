@@ -1,0 +1,1 @@
+import{_ as e,o as r,c as a,S as s}from"./chunks/framework.fb8a354d.js";const f=JSON.parse('{"title":"Recursos","description":"","frontmatter":{},"headers":[],"relativePath":"resources.md","filePath":"resources.md"}'),t={name:"resources.md"},o=s("",5),l=[o];function i(c,n,u,d,h,_){return r(),a("div",null,l)}const m=e(t,[["render",i]]);export{f as __pageData,m as default};
