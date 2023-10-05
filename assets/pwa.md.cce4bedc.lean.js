@@ -1,0 +1,1 @@
+import{_ as a,o as e,c as i,S as o}from"./chunks/framework.0335e7b7.js";const f=JSON.parse('{"title":"Aplicaciones Web Progresivas","description":"","frontmatter":{},"headers":[],"relativePath":"pwa.md","filePath":"pwa.md"}'),s={name:"pwa.md"},n=o("",17),c=[n];function r(l,t,d,p,u,m){return e(),i("div",null,c)}const v=a(s,[["render",r]]);export{f as __pageData,v as default};
