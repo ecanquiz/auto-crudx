@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as a,S as o}from"./chunks/framework.0335e7b7.js";const p=JSON.parse('{"title":"Cimientos","description":"","frontmatter":{},"headers":[],"relativePath":"foundations.md","filePath":"foundations.md"}'),n={name:"foundations.md"},s=o("",2),i=[s];function r(c,_,d,l,f,u){return t(),a("div",null,i)}const h=e(n,[["render",r]]);export{p as __pageData,h as default};
