@@ -1,2 +1,2 @@
-# auto-crud
-Auto CRUD
+# auto-crudx
+Auto CRUDx
