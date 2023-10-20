@@ -11,7 +11,7 @@ export default defineConfig({
     siteTitle: 'Auto-CRUD',
     nav: [
       { text: 'Inicio', link: '/' },
-      { text: 'Empezar', link: '/get-start' },
+      { text: 'Comenzar', link: '/get-start' },
       { text: 'ecanquiz', link: 'https://ecanquiz.github.io/' }
     ],
 
@@ -20,7 +20,8 @@ export default defineConfig({
         path: '/',      // optional, link of the title, which should be an absolute path and must exist        
         sidebarDepth: 1,    // optional, defaults to 1
         items: [
-          { text: 'Empezar', link: '/get-start' }         
+          { text: 'Comenzar', link: '/get-start' },
+          { text: 'Instalación', link: '/install' }          
         ]
       }      
     ],
