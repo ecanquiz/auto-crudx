@@ -16,37 +16,44 @@ Las funciones básicas en bases de datos o la capa de persistencia en un softwar
 **Auto-CRUDx** brinda las herramientas para ayudarlo a crear su propio Generador de CRUDs Automático (según su propia pila de desarrollp y arquitectura particular). Por lo tanto, usted mismo debe diseñar sus plantillas según su criterio.
 :::
 
-## Ejemplos
-
 :::warning Advertencia
-***Auto-CRUDx*** no genera _Scaffold_. Por lo tanto, no genera _Layout_, _Sign In_, _Sign Up_, _Password Recovery_, etc. 
+***Auto-CRUDx*** no es un Generador de CRUDs por si mismo, más bien, es una herramienta que le facilitará a usted la construcción de su **Generador de CRUDs**. En otras palabras, ***Auto-CRUDx*** le ayudará a construir el suyo propio.
+
+***Auto-CRUDx*** tampoco es una herramienta para construir _Scaffolds_. Por lo tanto, no genera _Layout_, _Sign In_, _Sign Up_, _Password Recovery_, etc. 
 :::
 
-Los siguientes ejemplos de CRUDs fueron creados a travéz de la herramienta ***Auto-CRUDx***, la cual fue desarrollada con [Laravel](https://laravel.com/) y [Vue](https://vuejs.org/).
+:::info Ejemplos
 
-
-:::tip Información
-Usted puede consultar el código generado, tanto del [Backend](https://github.com/CaribesTIC/laravuel-api/tree/main/Modules/Meeting) como del [Frontend](https://github.com/CaribesTIC/laravuel-spa/tree/main/src/modules/Meeting), de los siguientes ejemplos. 
+Los siguientes ejemplos de CRUDs fueron creados a travéz de la herramienta ***Auto-CRUDx***. Y su pila, tanto del _backend_ como del _frontend_, fue desarrollada con [Laravel](https://laravel.com/) y [Vue](https://vuejs.org/) respectivamente.
 :::
 
-## 1° CRUD Básico
+## 1° CRUD Básico (ejemplo)
+
+El siguiente video muestra ejemplos de CRUDs para tablas simples que generalmente se usan para llenar listas desplegable como elementos `select` de HTML.
 
 <video controls>
   <source src="./assets/get-start-1.mp4">
 </video>
 
-## 2° CRUD Intermedio
+## 2° CRUD Intermedio (ejemplo)
+
+Los CRUDs intermedios son aquellos un poco más elaborados, los cuales generalmente tratan sobre un formulario que contiene varios campos de distintos tipos. Como el que muestra el siguiente video.
 
 <video controls>
   <source src="./assets/get-start-2.mp4">
 </video>
 
-## 3° CRUD Avanzado
+## 3° CRUD Avanzado (ejemplo)
+
+Los CRUDs avanzados son los más complejos, porque generalmente están constituidos por múltiples formularios. Específicamente, un formulario para una tabla maestra y **_N_** formularios para **_N_** tablas detalles. Como el que muestra el siguiente video.
 
 <video controls>
   <source src="./assets/get-start-3.mp4">
 </video>
 
+:::tip Información
+Usted puede consultar el código generado, tanto del [Backend](https://github.com/CaribesTIC/laravuel-api/tree/main/Modules/Meeting) como del [Frontend](https://github.com/CaribesTIC/laravuel-spa/tree/main/src/modules/Meeting), de ejemplos anteriores. 
+:::
 
 ## Requisitos
 
