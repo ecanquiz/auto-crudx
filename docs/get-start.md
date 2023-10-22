@@ -10,7 +10,7 @@ Las funciones básicas en bases de datos o la capa de persistencia en un softwar
 
 ## ¿ Qué es Auto-CRUDx ?
 
-[Auto-CRUDx](https://github.com/ecanquiz/node-auto-crudx) es una herramienta que ayuda a crear su propio Generador de CRUDs Automático según su propia pila de desarrollp y arquitectura particular.
+[Auto-CRUDx](https://github.com/ecanquiz/node-auto-crudx) es una herramienta que ayuda a crear su propio Generador de CRUDs Automático según su propia pila de desarrollo y arquitectura particular.
 
 :::tip Importante
 **Auto-CRUDx** brinda las herramientas para ayudarlo a crear su propio Generador de CRUDs Automático (según su propia pila de desarrollp y arquitectura particular). Por lo tanto, usted mismo debe diseñar sus plantillas según su criterio.
@@ -61,7 +61,8 @@ Auto-CRUDx está desarrollada en [Node](https://nodejs.org/), por lo que es impo
 
 Además, usa como dependencia las Plantillas de JavaScript Integradas [EJS](https://www.npmjs.com/package/ejs). Por lo que también es fundamental leer la respectiva [documentación](https://ejs.co/).
 
+:::warning Advertencia
 La actual versión del **Auto-CRUx**, solo se alimenta de la información proveniente del diseño de sus tablas creadas en su bases de datos [PostgreSQL](https://www.postgresql.org/). Por lo que debe tener previamente instalado PostgreSQL en su máquina, así como también haber construido sus correspondientes tablas en dicha base de datos.
-
+:::
 
 

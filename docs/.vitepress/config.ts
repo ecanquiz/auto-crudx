@@ -21,7 +21,9 @@ export default defineConfig({
         sidebarDepth: 1,    // optional, defaults to 1
         items: [
           { text: 'Comenzar', link: '/get-start' },
-          { text: 'Instalación', link: '/install' }          
+          { text: 'Instalación', link: '/install' },
+          { text: 'Estructura de Carpetas', link: '/folder-structure' },
+          { text: 'Configuración', link: '/config' }                  
         ]
       }      
     ],
