@@ -1,6 +1,4 @@
-# Empezar
-
-## Instalación
+# Instalación
 
 https://github.com/ecanquiz/node-auto-crudx
 

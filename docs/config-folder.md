@@ -1,4 +1,22 @@
-# Configuración
+# Carpeta `config`
+
+```txt{2}
+src/
+├── config/
+├── stack/
+└── app.ts
+```
+
+```txt{3,4,5,6}
+src/
+├── config/
+|   ├── crud.ts
+|   ├── db.ts
+|   ├── index.ts
+|   └── output.ts
+├── stack/
+└── app.ts
+```
 
 :::info
 Para poner en marcha **Auto-CRUDx** debe tener un archivo `.env` correctamente configurado en la raiz del proyecto.
