@@ -1,1 +1,0 @@
-import{_ as s,o as a,c as n,S as l}from"./chunks/framework.233e4693.js";const d=JSON.parse('{"title":"Empezar","description":"","frontmatter":{},"headers":[],"relativePath":"install.md","filePath":"install.md"}'),o={name:"install.md"},p=l("",4),e=[p];function t(r,c,C,i,y,A){return a(),n("div",null,e)}const h=s(o,[["render",t]]);export{d as __pageData,h as default};
