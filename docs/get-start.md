@@ -4,24 +4,6 @@
 
 En informática, [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) es el acrónimo de _"Crear"_, _"Leer"_, _"Actualizar"_ y _"Borrar"_, (del original en inglés, _Create, Read, Update and Delete_), que se usa para referirse a las funciones básicas en bases de datos o la capa de persistencia en un software.
 
-## ¿ Por qué Auto-CRUDx ?
-
-Las funciones básicas en bases de datos o la capa de persistencia en un software son tareas repetitivas que se hacen regularmente cuando de desarrollo de software se trata. Por lo que, una vez definida una estructura estandar, para los típicos CRUDs, es útil una herramienta que los genere automáticamente.
-
-## ¿ Qué es Auto-CRUDx ?
-
-[Auto-CRUDx](https://github.com/ecanquiz/node-auto-crudx) es una herramienta que ayuda a crear su propio Generador de CRUDs Automático según su propia pila de desarrollo y arquitectura particular.
-
-:::tip Importante
-**Auto-CRUDx** brinda las herramientas para ayudarlo a crear su propio Generador de CRUDs Automático (según su propia pila de desarrollp y arquitectura particular). Por lo tanto, usted mismo debe diseñar sus plantillas según su criterio.
-:::
-
-:::warning Advertencia
-***Auto-CRUDx*** no es un Generador de CRUDs por si mismo, más bien, es una herramienta que le facilitará a usted la construcción de su **Generador de CRUDs**. En otras palabras, ***Auto-CRUDx*** le ayudará a construir el suyo propio.
-
-***Auto-CRUDx*** tampoco es una herramienta para construir _Scaffolds_. Por lo tanto, no genera _Layout_, _Sign In_, _Sign Up_, _Password Recovery_, etc. 
-:::
-
 :::info Ejemplos
 
 Los siguientes ejemplos de CRUDs fueron creados a travéz de la herramienta ***Auto-CRUDx***. Y su pila, tanto del _backend_ como del _frontend_, fue desarrollada con [Laravel](https://laravel.com/) y [Vue](https://vuejs.org/) respectivamente.
@@ -53,6 +35,24 @@ Los CRUDs avanzados son los más complejos, porque generalmente están constitui
 
 :::tip Información
 Usted puede consultar el código generado, tanto del [Backend](https://github.com/CaribesTIC/laravuel-api/tree/main/Modules/Meeting) como del [Frontend](https://github.com/CaribesTIC/laravuel-spa/tree/main/src/modules/Meeting), de ejemplos anteriores. 
+:::
+
+## ¿ Por qué Auto-CRUDx ?
+
+Las funciones básicas en bases de datos o la capa de persistencia en un software son tareas repetitivas que se hacen regularmente cuando de desarrollo de software se trata. Por lo que, una vez definida una estructura estandar, para los típicos CRUDs, es útil una herramienta que los genere automáticamente.
+
+## ¿ Qué es Auto-CRUDx ?
+
+[Auto-CRUDx](https://github.com/ecanquiz/node-auto-crudx) es una herramienta que ayuda a crear su propio Generador de CRUDs Automático según su propia pila de desarrollo y arquitectura particular.
+
+:::tip Importante
+**Auto-CRUDx** brinda las herramientas para ayudarlo a crear su propio Generador de CRUDs Automático (según su propia pila de desarrollp y arquitectura particular). Por lo tanto, usted mismo debe diseñar sus plantillas según su criterio.
+:::
+
+:::warning Advertencia
+***Auto-CRUDx*** no es un Generador de CRUDs por si mismo, más bien, es una herramienta que le facilitará a usted la construcción de su **Generador de CRUDs**. En otras palabras, ***Auto-CRUDx*** le ayudará a construir el suyo propio.
+
+***Auto-CRUDx*** tampoco es una herramienta para construir _Scaffolds_. Por lo tanto, no genera _Layout_, _Sign In_, _Sign Up_, _Password Recovery_, etc. 
 :::
 
 ## Requisitos
