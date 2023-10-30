@@ -1,26 +1,9 @@
 # Carpeta `config`
 
-```txt{2}
-src/
-├── config/
-├── stack/
-└── app.ts
-```
-
-```txt{3,4,5,6}
-src/
-├── config/
-|   ├── crud.ts
-|   ├── db.ts
-|   ├── index.ts
-|   └── output.ts
-├── stack/
-└── app.ts
-```
-
-:::info
-Para poner en marcha **Auto-CRUDx** debe tener un archivo `.env` correctamente configurado en la raiz del proyecto.
+:::tip
+Antes de esplicar lo referente a la carpeta `config` preparemos nuestro archivo `.env`.
 :::
+
 
 ## Archivo `.env`
 
@@ -52,7 +35,7 @@ CRUD_STACK_FRONTEND=demo-frontend
 
 Copie y pegue en la raiz del proyecto este archivo `.env.example` como base para crear su archivo de configuración `.env`.
 
-## Descripción de Variables de Entorno
+## Descripción de `.env`
 
 - **`DB_DATABASE`:** Nombre de la base de datos.
 - **`DB_HOST`**: IP de la máquina anfitriona donde se hospeda el proyecto.
@@ -79,24 +62,60 @@ Copie y pegue en la raiz del proyecto este archivo `.env.example` como base para
 - **`CRUD_STACK_BACKEND`**: Nombre de la carpeta de su pila para su _backend_.
 - **`CRUD_STACK_FRONTEND`**: Nombre de la carpeta de su pila para su _frontend_.
 
+
+## Carpeta `config`
+
+En la carpeta `config` establecemos los parámetros que necesitamos para que esto funcione. 
+
+```txt{2}
+src/
+├── config/
+├── stack/
+└── app.ts
+```
+
 ## Usar Variables de Entorno
 
-API de core/config
+Tenga en cuenta que hay 3 archivos (`crud.ts`, `db.ts` y `output.ts`) respectivamente más el `index.ts` que es la interface de los anteriores.
 
-```ts
+
+```txt{5}
+src/
+├── config/
+|   ├── crud.ts
+|   ├── db.ts
+|   ├── index.ts
+|   └── output.ts
+├── stack/
+└── app.ts
+```
+
+## El archivo `src/config/index.ts`
+
+Tenga en cuenta todo lo que exporta el archivo `src/config/index.ts`.
+
+```ts{12,13,14,15,16,17,18,19,20}
+import crud from './crud'
+import dbConfig from './db'
 import {
-    crud,    
     moduleName,
     pathBackend,
     pathFrontend, 
     pathModule, 
     pathUser
-} from '@config/index'
-```
+} from './output'
+// import * as output from './output'
 
+export default {//output
+    crud,
+    dbConfig,    
+    moduleName,
+    pathBackend,
+    pathFrontend, 
+    pathModule, 
+    pathUser
+}
 
-```ts
-import { crud } from '@config/index'
 ```
 
 - **`crud.schema`:** Nombre del esquema de la base de datos donde se encuetra la tabla en cuestión.
@@ -116,3 +135,23 @@ import { crud } from '@config/index'
 - **`pathModule`:** Ruta del módulo.
 - **`pathBackend`:** Carpeta(s) donde está alojado el `scaffold` de su _backend_. Ejemplo: `/dev-env/my-backend-proyect/app`.
 - **`pathFrontend`:** Carpeta(s) donde está alojado el `scaffold` de su _fronten_. Ejemplo: `/dev-env/my-fronten-proyect/src`.
+
+
+------------
+
+
+```ts
+import {
+    crud,    
+    moduleName,
+    pathBackend,
+    pathFrontend, 
+    pathModule, 
+    pathUser
+} from '@config/index'
+```
+
+
+```ts
+import { crud } from '@config/index'
+```
