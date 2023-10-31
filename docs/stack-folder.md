@@ -7,6 +7,9 @@ src/
 └── app.ts
 ```
 
+## `stack/my-backend/`
+
+
 ```txt{4,5}
 src/
 ├── config/
@@ -15,6 +18,8 @@ src/
 |   └── my-frontend/
 └── app.ts
 ```
+
+## `stack/my-frontend/`
 
 
 ```txt{5,6,7,8,9,10,12,13,14,15,16}
@@ -36,3 +41,9 @@ src/
 |       └── renderings.ts
 └── app.ts
 ```
+
+
+
+
+
+

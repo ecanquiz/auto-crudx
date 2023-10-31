@@ -29,5 +29,5 @@ The generated code will be written in the ./output folder
 ```
 
 :::warning Advertencia
-Para que su Generador de CRUDs funcione, antes debe tenerlo previamente [configurado](./config-folder.html).
+Para que su Generador de CRUDs funcione, antes debe tenerlo previamente [configurado](./env-config.html).
 :::
