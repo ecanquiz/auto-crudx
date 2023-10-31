@@ -22,7 +22,7 @@ export default defineConfig({
         items: [
           { text: 'Comenzar', link: '/get-start' },
           { text: 'Instalación', link: '/install' },
-          { text: 'Carpeta config', link: '/config-folder' },
+          { text: 'Configurar Entorno', link: '/env-config' },
           { text: 'Archivo app.ts', link: '/app-ts-file' },          
           { text: 'Carpeta stack', link: '/stack-folder' },          
           { text: 'Auto CRUDx Tool', link: '/autocrudx-tool' },

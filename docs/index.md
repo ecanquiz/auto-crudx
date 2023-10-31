@@ -7,7 +7,7 @@ hero:
   text: "CRUD Automático"
   tagline: "Construir CRUDs Automáticamente"
   image:
-    src: /images2.png
+    src: /logo.png
     alt: Auto-CRUDx
   actions:
     - theme: brand
