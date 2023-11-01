@@ -23,7 +23,8 @@ export default defineConfig({
           { text: 'Comenzar', link: '/get-start' },
           { text: 'Instalación', link: '/install' },
           { text: 'Configurar Entorno', link: '/env-config' },
-          { text: 'Archivo app.ts', link: '/app-ts-file' },          
+          { text: 'Archivo app.ts', link: '/app-ts-file' },
+          { text: 'Depurar Código', link: '/code-debugging' },                  
           { text: 'Carpeta stack', link: '/stack-folder' },          
           { text: 'Auto CRUDx Tool', link: '/autocrudx-tool' },
         ]
