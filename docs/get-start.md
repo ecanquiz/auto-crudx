@@ -6,7 +6,7 @@ En informática, [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_d
 
 :::info Ejemplos
 
-Los siguientes ejemplos de CRUDs fueron creados a travéz de la herramienta ***Auto-CRUDx***. Y su pila, tanto del _backend_ como del _frontend_, fue desarrollada con [Laravel](https://laravel.com/) y [Vue](https://vuejs.org/) respectivamente.
+Los siguientes ejemplos de CRUDs fueron creados a travéz de la herramienta ***Auto-CRUDx***. Y su **_stack_**, tanto del _backend_ como del _frontend_, fue desarrollada con [Laravel](https://laravel.com/) y [Vue](https://vuejs.org/) respectivamente.
 :::
 
 ## 1° CRUD Básico (ejemplo)
@@ -43,10 +43,8 @@ Las funciones básicas en bases de datos o la capa de persistencia en un softwar
 
 ## ¿ Qué es Auto-CRUDx ?
 
-[Auto-CRUDx](https://github.com/ecanquiz/node-auto-crudx) es una herramienta que ayuda a crear su propio Generador de CRUDs Automático según su propia pila de desarrollo y arquitectura particular.
-
 :::tip Importante
-**Auto-CRUDx** brinda las herramientas para ayudarlo a crear su propio Generador de CRUDs Automático (según su propia pila de desarrollp y arquitectura particular). Por lo tanto, usted mismo debe diseñar sus plantillas según su criterio.
+[Auto-CRUDx](https://github.com/ecanquiz/node-auto-crudx) brinda las herramientas para ayudarlo a crear su propio Generador de CRUDs Automático (según su propio **_stack_** de desarrollp y arquitectura particular). Por lo tanto, usted mismo debe diseñar sus plantillas según su criterio.
 :::
 
 :::warning Advertencia
