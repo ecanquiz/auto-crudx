@@ -6,7 +6,7 @@ En informática, [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_d
 
 :::info Ejemplos
 
-Los siguientes ejemplos de CRUDs fueron creados a travéz de la herramienta ***Auto-CRUDx***. Y su **_stack_**, tanto del _backend_ como del _frontend_, fue desarrollada con [Laravel](https://laravel.com/) y [Vue](https://vuejs.org/) respectivamente.
+Los siguientes ejemplos de **CRUDs** son creados a travéz de la herramienta ***Auto-CRUDx*** que está desarrollada en [Node](https://nodejs.org/). Pero su **_stack_**, tanto del _backend_ como del _frontend_, es generado para [Laravel](https://laravel.com/) y [Vue](https://vuejs.org/) respectivamente.
 :::
 
 ## 1° CRUD Básico (ejemplo)
@@ -55,7 +55,7 @@ Las funciones básicas en bases de datos o la capa de persistencia en un softwar
 
 ## Requisitos
 
-Auto-CRUDx está desarrollada en [Node](https://nodejs.org/), por lo que es importante tener conocimientos mínimos del mismo y tenerlo instalado en su maquina.
+Auto-CRUDx está desarrollado en [Node](https://nodejs.org/), por lo que es importante tener conocimientos mínimos del mismo y tenerlo instalado en su maquina.
 
 Además, usa como dependencia las Plantillas de JavaScript Integradas [EJS](https://www.npmjs.com/package/ejs). Por lo que también es fundamental leer la respectiva [documentación](https://ejs.co/).
 
