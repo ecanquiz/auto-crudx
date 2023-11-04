@@ -1,8 +1,25 @@
 # Depurar Código
 
-## Ejemplo Básico (configuración) 
+>Para crear nuestro **Generador AutoCRUD** muchas veces necesitaremos revisar, por `console.log`, los datos que estamos manejando. 
 
-```sh
+Si entra y revisa el archivo [`src/app.ts`](/app-ts-file.html) podrá observar un **_callback_** con un `dataJSON` como parámetro que retorna un `console.log` con un `dataJSON` como argumento. 
+
+📃`src/app.ts`
+```ts
+// omitted for brevity ...
+  dataJSON => console.log(dataJSON)
+// omitted for brevity ...
+```
+
+Con ello podemos revisar, los datos que estamos manejando.
+
+
+## Ejemplo Básico (configuración)
+
+Para revisar los datos que estamos manejando, debemos avisarle antes a `autocrudx-tools` que en ese momento no queremos generar ningún **CRUD** porque solo queremos consultar los datos. Esto se hace a través de la configuración, estableciendo `CRUD_GENERATE` en `FALSE`.
+
+
+```sh{5}
 # omitted for brevity ...
 CRUD_TABLE_MASTER=countries
 CRUD_TABLE_MASTER_IS_HELPER=TRUE
@@ -10,9 +27,15 @@ CRUD_TABLE_MASTER_IS_HELPER=TRUE
 CRUD_GENERATE=FALSE
 ```
 
+Con esta configuración, si ejecutamos `nodemon dist/app.js` en nuestra línea de comando de la terminal inmediatamente debería aparecer un cuadro informativo y un JSON con todos los datos que necesitamos de la tabla de la base de datos a la cual le estamos generando, además de algunas herramientas útiles. Separemos esta información en tres secciones:
+
+- Información General
+- Herramientas Funcionales
+- Datos de la tabla de la base de datos
+
 ## Información General
 
-```sh
+```sh{8,9,10,11,12,13,14,15,16,17}
 myusername@mypc:~/node-auto-crudx$ nodemon dist/app.js
 [nodemon] 3.0.1
 [nodemon] to restart at any time, enter `rs`
@@ -32,6 +55,15 @@ Connected!
 └─────────┴──────────────┴───────────────────────────────┴──────────────────────────────────────────┘
 ```
 
+Tenga en cuenta que `dataJSON` es un objeto denominado `customData` que tiene como propiedades:
+
+- `fn`: Funciones de herramientas.
+- `tableMaster`: Nombre de la tabla maestro.
+- `tableStructure`: Estructura de la tabla maestro.
+- `tableDetailOfMaster`: Tablas detalles del mMaestro (si las hubiera).
+- `tableMasterForeignKeysAssoc`: Tablas asociativas del maestro (si las hubiera).
+- `tableStructureClean`: Estructura de la tabla maestro sin los campos `created_at`, `updated_at` y `deleted_at`.
+
 ## Herramientas Funcionales (JSON)
 ```json
 {
@@ -49,6 +81,17 @@ Connected!
   },
   // omitted for brevity ...
 ```
+
+Tenga en cuenta las funciones del objeto `fn` que tenemos como herramientas para generar CRUDs.
+
+- `fn.addCommaToArr`:
+- `fn.camelCase`:
+- `fn.foreignTableName`:
+- `fn.singular`:
+- `fn.uCamelCase`:
+- `fn.v.excludeFields`:
+- `fn.v.noId`:
+- `fn.v.noIdAndExcludeFields`:
 
 ## Ejemplo Básico (JSON de la tabla)
 ```json
