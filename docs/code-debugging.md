@@ -65,6 +65,9 @@ Tenga en cuenta que `dataJSON` es un objeto denominado `customData` que tiene co
 - `tableStructureClean`: Estructura de la tabla maestro sin los campos `created_at`, `updated_at` y `deleted_at`.
 
 ## Herramientas Funcionales (JSON)
+
+Tenga en cuenta las funciones del objeto `fn` como herramientas para generar CRUDs.
+
 ```json
 {
   fn: {
@@ -82,16 +85,41 @@ Tenga en cuenta que `dataJSON` es un objeto denominado `customData` que tiene co
   // omitted for brevity ...
 ```
 
-Tenga en cuenta las funciones del objeto `fn` que tenemos como herramientas para generar CRUDs.
+## `fn.addCommaToArr`
 
-- `fn.addCommaToArr`:
-- `fn.camelCase`:
-- `fn.foreignTableName`:
-- `fn.singular`:
-- `fn.uCamelCase`:
-- `fn.v.excludeFields`:
-- `fn.v.noId`:
-- `fn.v.noIdAndExcludeFields`:
+Suponga que quiere renderizar un arreglo separado por coma (`", "`) a excepción del útimo elemento. Puede hacerlo utilizando `fn.addCommaToArr`.
+Esta función recibe como argumentos:
+
+- El arreglo que desea recorrer
+- El índice 
+- El descuento de posiciones
+
+`template-file.txt`
+```txt{2}
+const someStuff = [<% tableStructure.forEach(function(field, index) {
+    '<%- field.column_name; %>'<%= fn.addCommaToArr(tableStructure, index, 0) -%>
+});%> 
+];
+```
+
+Tenga en cuenta cómo en el último elemento no se colocó la coma (`", "`).
+
+`rendering-file.js`
+```js{4}
+const someStuff = [
+    'foo',     
+    'bar',     
+    'baz'
+];
+```
+
+## `fn.camelCase`:
+## `fn.foreignTableName`:
+## `fn.singular`:
+## `fn.uCamelCase`:
+## `fn.v.excludeFields`:
+## `fn.v.noId`:
+## `fn.v.noIdAndExcludeFields`:
 
 ## Ejemplo Básico (JSON de la tabla)
 ```json
