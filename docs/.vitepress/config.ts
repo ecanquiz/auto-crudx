@@ -27,6 +27,7 @@ export default defineConfig({
           { text: 'Depurar Código', link: '/code-debugging' },                  
           { text: 'Carpeta stack', link: '/stack-folder' },          
           { text: 'Auto CRUDx Tool', link: '/autocrudx-tool' },
+          { text: 'Herramientas Funcionales', link: '/functional-tools' },
         ]
       }      
     ],
