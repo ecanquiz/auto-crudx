@@ -57,7 +57,7 @@ Connected!
 
 Tenga en cuenta que `dataJSON` es un objeto denominado `customData` que tiene como propiedades:
 
-- `fn`: [Herramientas Funcionales (JSON)](./functional-tools.html).
+- `fn`: [Herramientas Funcionales (JSON)](./autocrudx-tools/functional-tools.html).
 - `tableMaster`: Nombre de la tabla maestro.
 - `tableStructure`: Estructura de la tabla maestro.
 - `tableDetailOfMaster`: Tablas detalles del mMaestro (si las hubiera).
@@ -141,7 +141,7 @@ CRUD_GENERATE=FALSE
 
 ## Ejemplo Intermedio (JSON de la tabla)
 
-[información general ](./code-debugging.html#informacion-general) y [JSON con herramientas funcionales](./code-debugging.html#herramientas-funcionales-json)
+[información general ](./code-debugging.html#informacion-general) y [JSON con herramientas funcionales](./autocrudx-tools/functional-tools.html)
 
 
 ```sh

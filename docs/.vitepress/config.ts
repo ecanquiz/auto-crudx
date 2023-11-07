@@ -14,23 +14,32 @@ export default defineConfig({
       { text: 'Comenzar', link: '/get-start' },
       { text: 'ecanquiz', link: 'https://ecanquiz.github.io/' }
     ],
-
-    sidebar: [
-      {      
-        path: '/',      // optional, link of the title, which should be an absolute path and must exist        
+    sidebar: [{      
+        path: '/',      // optional, link of the title, which should be an absolute path and must exist
         sidebarDepth: 1,    // optional, defaults to 1
         items: [
           { text: 'Comenzar', link: '/get-start' },
           { text: 'Instalación', link: '/install' },
           { text: 'Configurar Entorno', link: '/env-config' },
-          { text: 'Archivo app.ts', link: '/app-ts-file' },
-          { text: 'Depurar Código', link: '/code-debugging' },                  
-          { text: 'Carpeta stack', link: '/stack-folder' },          
-          { text: 'Auto CRUDx Tool', link: '/autocrudx-tool' },
-          { text: 'Herramientas Funcionales', link: '/functional-tools' },
+          { text: 'Archivo App.ts', link: '/app-ts-file' },
+          { text: 'Depurar Código', link: '/code-debugging' }
         ]
-      }      
-    ],
+      }, {
+      text: 'AutoCRUDx Tools',   // required
+      path: '/autocrudx-tools/',
+      collapsible: true,
+      collapsed: false,
+      items: [
+        { text: 'Introducción', link: '/autocrudx-tools/intro' },
+        { text: 'Herramientas Funcionales', link: '/autocrudx-tools/functional-tools' }
+      ]
+    }, {      
+        path: '/',
+        sidebarDepth: 1,
+        items: [
+          { text: 'Carpeta Stack', link: '/stack-folder' },
+        ]
+      }],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/ecanquiz/auto-crudx' }
     ],

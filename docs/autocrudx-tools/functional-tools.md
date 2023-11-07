@@ -1,4 +1,4 @@
-# Herramientas Funcionales (JSON)
+# Herramientas Funcionales (AutoCRUDx Tools)
 
 Tenga en cuenta las funciones del objeto `fn` como herramientas para generar CRUDs.
 
