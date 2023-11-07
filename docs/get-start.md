@@ -53,6 +53,12 @@ Las funciones básicas en bases de datos o la capa de persistencia en un softwar
 ***Auto-CRUDx*** tampoco es una herramienta para construir _Scaffolds_. Por lo tanto, no genera _Layout_, _Sign In_, _Sign Up_, _Password Recovery_, etc. 
 :::
 
+Tenga en cuenta que el proyecto `node-auto-crudx` usa como dependencia el paquete `autocrudx-tools`.
+
+![get-start](./assets/get-start-4.jpg)
+
+El proyecto `node-auto-crudx` leera su base de datos y escribirá el código generado aparte en su proyecto. El anterior diagrama muestra un **_stack_** orientado a micro-servicios, no obstante, funciona igual si se tratara de un **_stack_** MVC.
+
 ## Requisitos
 
 Auto-CRUDx está desarrollado en [Node](https://nodejs.org/), por lo que es importante tener conocimientos mínimos del mismo y tenerlo instalado en su maquina.

@@ -23,7 +23,7 @@ features:
   - title: ¿ Por qué Auto-CRUDx ?
     details: El desarrollo de CRUDs es una labor repetitiva que se hace regularmente en el proceso de desarrollo de software. Una vez definida una estructura estandar, para los típicos CRUDs, es útil una herramienta que los genere automáticamente.
   - title: ¿ Qué es Auto-CRUDx ?
-    details: Auto-CRUDx es una herramienta que ayuda a crear tu propio Generador de CRUDs Automático según tu propia pila de desarrollo y arquitectura particular.
+    details: Auto-CRUDx es una herramienta que ayuda a crear tu propio Generador de CRUDs Automático, según su propio stack de desarrollo y arquitectura particular.
     
 footer: MIT Licensed | Copyleft © 2023-present Ernesto Canquiz
 ---
