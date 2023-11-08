@@ -20,14 +20,25 @@ Tenga en cuenta las funciones del objeto `fn` como herramientas para generar CRU
 
 ## `fn.addCommaToArr`
 
-Suponga que quiere renderizar un arreglo separado por coma (`", "`) a excepción del útimo elemento. Puede hacerlo utilizando `fn.addCommaToArr`.
-Esta función recibe como argumentos:
+```ts
+// function signature
+const fn = {  
+  addCommaToArr: (arr: any[], index: number, less?: number) => ", " | ""
+  // omitted for brevity ...
+}
+```
 
-- El arreglo que desea recorrer
-- El índice 
-- El descuento de posiciones
+Con la función `fn.addCommaToArr()` puede renderizar un arreglo separado por coma (`","`) a excepción del útimo elemento. Esta función recibe 3 argumentos:
 
-`template-file.txt`
+1. **El arreglo que desea recorrer**.
+2. **El índice actual del arreglo**.
+3. **El descuento del largo del arreglo**. Este último trae cero (`0`) de manera predeterminada. Pero si excluye del arreglo campos como `id`, `created_at`, `updated_at` y `deleted_at` debe indicar la cantidad de campos excluidos para que funcione.
+
+**Ejemplo:**
+
+Imagine que desea recorrer el arreglo `tableStructure` para renderizar todos los nombres de sus campos (`field.column_name`). Con la instrucción `fn.addCommaToArr(tableStructure, index, 0)` indicará que no deberá colocarle la coma (`","`) al último elemento del arreglo.
+
+`my-template-file.txt`
 ```txt{2}
 const someStuff = [<% tableStructure.forEach(function(field, index) {
     '<%- field.column_name; %>'<%= fn.addCommaToArr(tableStructure, index, 0) -%>
@@ -35,9 +46,9 @@ const someStuff = [<% tableStructure.forEach(function(field, index) {
 ];
 ```
 
-Tenga en cuenta cómo en el último elemento no se colocó la coma (`", "`).
+Esto genererá el siguiente renderizado.
 
-`rendering-file.js`
+`my-rendering-file.js`
 ```js{4}
 const someStuff = [
     'foo',     
@@ -46,16 +57,25 @@ const someStuff = [
 ];
 ```
 
+Tenga en cuenta cómo en el último elemento no se colocó la coma (`","`).
+
 ## `fn.foreignTableName`
 
-El propósito de la función `fn.foreignTableName` es devolver, en el caso de existir, el nombre de la actual tabla asociada a la tabla master. 
+El propósito de la función `fn.foreignTableName()` es devolver, en el caso de existir, el nombre de la actual tabla asociada a la tabla master. 
 
 Dicha función recibe como primer argumento un `string` representando el `columnName` de la tabla master que se asocia a la actual tabla foranea. Y como segundo argumento un arreglo tipo `TableMasterForeignKeysAssoc` con información de todas las tablas asociadas a la tabla master.
 
+
 ```ts
-const foreignTableName: (
-  columnName: string, tableForeignKeysAssoc: TableMasterForeignKeysAssoc[]
-) => string | undefined
+// function signature
+const fn = {
+  // omitted for brevity ...
+  foreignTableName: (
+    columnName: string,
+    tableForeignKeysAssoc: TableMasterForeignKeysAssoc[]
+  ) => string | undefined
+  // omitted for brevity ...
+}
 ```
 
 Imagine el ejemplo estructural de una tabla master de nombre `people` unida internamente a través del campo `country_id` tipo `bigint` a una tabla asociativa llamada `countries` .
@@ -161,8 +181,69 @@ Una vez que se posee el nombre de la tabla asociativa `"countries"` basta con en
 
 
 
-## `fn.singular`:
-## `fn.uCamelCase`:
+## `fn.singular`
+
+La función `fn.singular()` devuelve el singular de una palabra en inglés.
+
+
+```ts
+// function signature
+const fn = {
+  // omitted for brevity ...
+  singular: (word: string, amount?: number | undefined) => string
+  // omitted for brevity ...
+}
+```
+
+## `fn.uCamelCase`
+
+```ts
+// function signature
+const fn = {
+  // omitted for brevity ...
+  uCamelCase: (str: string) => string
+  // omitted for brevity ...
+}
+```
+
+**A continuación se muestra un ejemplo de `fn.singular()` y `fn.uCamelCase()` trabajando juntos.**
+
+Siguiendo con el ejemplo de la tabla `people` imagine que está creando una plantilla para los respectivos controladores de Laravel.
+
+`my-template-file.txt`
+```txt
+// omitted for brevity ...
+
+/**
+ * Update the specified resource in storage.
+ */     
+public function update(Update<%= fn.uCamelCase(fn.singular(tableMaster)); %>Request $request, <%= fn.uCamelCase(fn.singular(tableMaster)); %> $<%= fn.singular(tableMaster); %>): JsonResponse
+{
+    return Update<%= fn.uCamelCase(fn.singular(tableMaster)); %>Service::execute($request, $<%= fn.singular(tableMaster); %>);
+}
+
+// omitted for brevity ...
+```
+
+Esto genererá el siguiente renderizado.
+
+`my-rendering-file.php`
+
+```php
+// omitted for brevity ...
+
+/**
+ * Update the specified resource in storage.
+ */     
+public function update(UpdatePersonRequest $request, Person $person): JsonResponse
+{
+    return UpdatePersonService::execute($request, $person);
+}
+
+// omitted for brevity ...
+```
+Tenga en cuenta que, en ingles, el singular de `people` es igual a `person`.
+
 ## `fn.v.excludeFields`:
 ## `fn.v.noId`:
 ## `fn.v.noIdAndExcludeFields`:
