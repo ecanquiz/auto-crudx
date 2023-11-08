@@ -57,7 +57,7 @@ Tenga en cuenta que el proyecto `node-auto-crudx` usa como dependencia el paquet
 
 ![get-start](./assets/get-start-4.jpg)
 
-El proyecto `node-auto-crudx` leera su base de datos y escribirá el código generado aparte en su proyecto. El anterior diagrama muestra un **_stack_** orientado a micro-servicios, no obstante, funciona igual si se tratara de un **_stack_** MVC.
+El proyecto `node-auto-crudx` leerá su base de datos y escribirá el código generado aparte en su proyecto. El anterior diagrama muestra un **_stack_** orientado a micro-servicios, no obstante, funciona igual si se tratara de un **_stack_** MVC.
 
 ## Requisitos
 
