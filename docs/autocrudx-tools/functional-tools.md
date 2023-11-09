@@ -10,8 +10,7 @@ Tenga en cuenta las funciones del objeto `fn` como herramientas para generar CRU
     singular: [Function: singular],
     uCamelCase: [Function: uCamelCase],
     v: {
-      excludeFields: [Function: excludeFields],
-      noId: [Function: noId],
+      excludeFields: [Function: excludeFields],      
       noIdAndExcludeFields: [Function: noIdAndExcludeFields]
     }
   },
@@ -244,6 +243,99 @@ public function update(UpdatePersonRequest $request, Person $person): JsonRespon
 ```
 Tenga en cuenta que, en ingles, el singular de `people` es igual a `person`.
 
-## `fn.v.excludeFields`:
-## `fn.v.noId`:
-## `fn.v.noIdAndExcludeFields`:
+## `fn.v.excludeFields`
+
+La función `fn.v.excludeFields()` valida que el valor `column_name` (tipo `string`) pasado como argumento,  no sea `created_at`, `updated_at` ni tampoco `deleted_at`.
+
+  
+```ts
+// function signature
+const fn = {
+  // omitted for brevity ...
+  excludeFields: (column_name: string) => boolean
+  // omitted for brevity ...
+}
+```
+
+Imagine que desea establecer en el modelo los campos `fillable`.
+
+`my-template-file.txt`
+```txt{2}
+protected $fillable = [<% tableStructure.forEach(function(field, index) {
+  if  (fn.v.excludeFields(field.column_name)) {%>
+    '<%- field.column_name; %>'<%= fn.addCommaToArr(tableStructure, index, 0) -%>
+<%}});%> 
+];
+```
+
+Siguiendo con el ejemplo de la tabla `people`, este sería el resultado.
+
+`my-rendering-file.php`
+```php
+protected $fillable = [
+    'id',     
+    'email',     
+    'type',     
+    'identification_card',     
+    'business_name',     
+    'phone',     
+    'country_id',     
+    'domicile'     
+];
+```
+
+## `fn.v.noIdAndExcludeFields`
+
+La función `fn.v.noIdAndExcludeFields()` valida que el valor `column_name` (tipo `string`) pasado como argumento,  no sea `created_at`, `updated_at`, `deleted_at` ni tampoco `id`.
+
+  
+```ts
+// function signature
+const fn = {
+  // omitted for brevity ...
+  noIdAndExcludeFields: (column_name: string) => boolean
+  // omitted for brevity ...
+}
+```
+
+Imagine que desea establecer reglas de validación a los campos `fillable` pero no desea incluir el campo `id`.
+
+`my-template-file.txt`
+```txt{9}
+/**
+ * Get the validation rules that apply to the request.
+ */
+public function rules(): array
+{
+    return [
+        <%
+        tableStructure.forEach(function(field, index) {
+        if  (fn.v.noIdAndExcludeFields(field.column_name)) { 
+        %>"<%- field.column_name; -%>" => ["required"]<%- fn.addCommaToArr(tableStructure, index, 0); -%> 
+        <%}});%>
+    ];
+}
+```
+
+Siguiendo con el ejemplo de la tabla `people`, este sería el resultado.
+
+`my-rendering-file.php`
+```php
+/**
+ * Get the validation rules that apply to the request.
+ */
+public function rules(): array
+{
+    return [
+        "email" => ["required"],  
+        "type" => ["required"],  
+        "identification_card" => ["required"],  
+        "business_name" => ["required"],  
+        "phone" => ["required"],  
+        "country_id" => ["required"],  
+        "domicile" => ["required"]
+
+    ];
+}
+```
+
