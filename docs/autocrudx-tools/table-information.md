@@ -81,7 +81,7 @@ CRUD_GENERATE=FALSE
 
 ## Ejemplo Intermedio (JSON de la tabla)
 
-[información general ](./code-debugging.html#informacion-general) y [JSON con herramientas funcionales](./autocrudx-tools/functional-tools.html)
+[información general ](../code-debugging.html#informacion-general) y [JSON con herramientas funcionales](../autocrudx-tools/functional-tools.html)
 
 
 ```sh
@@ -249,7 +249,7 @@ CRUD_GENERATE=FALSE
 
 ## Ejemplo Avanzado (JSON de la tabla)
 
-[información general ](./code-debugging.html#informacion-general) y [JSON con herramientas funcionales](./code-debugging.html#herramientas-funcionales-json)
+[información general ](../code-debugging.html#informacion-general) y [JSON con herramientas funcionales](../code-debugging.html#herramientas-funcionales-json)
 
 ```json
 {
