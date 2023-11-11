@@ -31,7 +31,8 @@ export default defineConfig({
       collapsed: false,
       items: [
         { text: 'Introducción', link: '/autocrudx-tools/intro' },
-        { text: 'Herramientas Funcionales', link: '/autocrudx-tools/functional-tools' }
+        { text: 'Herramientas Funcionales', link: '/autocrudx-tools/functional-tools' },
+        { text: 'Información de Tablas', link: '/autocrudx-tools/table-information' }
       ]
     }, {      
         path: '/',
