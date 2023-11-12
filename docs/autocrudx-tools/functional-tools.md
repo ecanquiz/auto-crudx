@@ -1,5 +1,12 @@
 # Herramientas Funcionales
 
+Al aplicar la configuración del [depurador de código](../code-debugging.html) se mostrarán en pantalla las herramientas funcionales que brinda `autocrudx-tools`.
+
+```sh
+# omitted for brevity ...
+CRUD_GENERATE=FALSE
+```
+
 Tenga en cuenta las funciones del objeto `fn` como herramientas para generar CRUDs.
 
 ```json

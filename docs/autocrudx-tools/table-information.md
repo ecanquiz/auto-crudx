@@ -1,12 +1,37 @@
 # Información de Tablas
 
+
+Al aplicar la configuración del [depurador de código](../code-debugging.html), `autocrudx-tools` mostrará en pantalla la información de la tabla a la cual desea generar el CRUD. 
+
+```sh
+# omitted for brevity ...
+CRUD_GENERATE=FALSE
+```
+
+Tenga en cuenta lo siguiente:
+
 - `tableMaster`: Nombre de la tabla maestro.
 - `tableStructure`: Estructura de la tabla maestro.
 - `tableDetailOfMaster`: Tablas detalles del mMaestro (si las hubiera).
 - `tableMasterForeignKeysAssoc`: Tablas asociativas del maestro (si las hubiera).
 - `tableStructureClean`: Estructura de la tabla maestro sin los campos `created_at`, `updated_at` y `deleted_at`.
 
-## Ejemplo Básico (JSON de la tabla)
+Vamos a los ejemplos...
+
+## Ejemplo Básico
+
+Este ejemplo es para generar un CRUD a una tabla llamada `countries`. Recuerde antes aplicar la configuración del [depurador de código](../code-debugging.html) para mostrar en pantalla la información de la tabla.
+
+
+```sh
+# omitted for brevity ...
+CRUD_TABLE_MASTER=countries
+CRUD_TABLE_MASTER_IS_HELPER=TRUE
+# omitted for brevity ...
+```
+
+Inmediatamente `autocrudx-tools` leerá la información de la tabla `countries` anteriormente creada en base de datos y mostrará un JSON como el siguiente, además de la [información general ](../code-debugging.html#informacion-general) y las [herramientas funcionales](../autocrudx-tools/functional-tools.html).
+
 ```json
 {
   // omitted for brevity ...
@@ -70,21 +95,24 @@
 [nodemon] clean exit - waiting for changes before restart
 ```
 
-## Ejemplo Intermedio (configuración)
+Tenga en cuenta que para este ejemplo, `autocrudx-tools` arrojó información de los correspondientes arreglos `tableMaster`, `tableStructure` y `tableStructureClean`. Mientras que `tableDetailOfMaster` y `tableMasterForeignKeysAssoc` respectivamente son arreglos vacios.
+
+## Ejemplo Intermedio
+
+
+Este ejemplo es para generar un CRUD a una tabla llamada `people`. Recuerde antes aplicar la configuración del [depurador de código](../code-debugging.html) para mostrar en pantalla la información de la tabla.
+
 ```sh
 # omitted for brevity ...
 CRUD_TABLE_MASTER=people
 CRUD_TABLE_MASTER_IS_HELPER=FALSE
 # omitted for brevity ...
-CRUD_GENERATE=FALSE
 ```
 
-## Ejemplo Intermedio (JSON de la tabla)
-
-[información general ](../code-debugging.html#informacion-general) y [JSON con herramientas funcionales](../autocrudx-tools/functional-tools.html)
+Inmediatamente `autocrudx-tools` leerá la información de la tabla `people` anteriormente creada en base de datos y mostrará un JSON como el siguiente, además de la [información general ](../code-debugging.html#informacion-general) y las [herramientas funcionales](../autocrudx-tools/functional-tools.html).
 
 
-```sh
+```json
   // omitted for brevity ...
   tableMaster: 'people',
   tableStructure: [
@@ -238,18 +266,21 @@ CRUD_GENERATE=FALSE
 [nodemon] clean exit - waiting for changes before restart
 ```
 
-## Ejemplo Avanzado (configuración)
+Tenga en cuenta que para este ejemplo, `autocrudx-tools` arrojó información de los arreglos `tableMaster`, `tableStructure`, `tableForeignKeysAssoc` y `tableStructureClean` respectivamente. Mientras que `tableDetailOfMaster` se trata de un arreglo vacio.
+
+## Ejemplo Avanzado
+
+Este ejemplo es para generar un CRUD a una tabla llamada `meetings`. Recuerde antes aplicar la configuración del [depurador de código](../code-debugging.html) para mostrar en pantalla la información de la tabla.
+
 ```sh
 # omitted for brevity ...
 CRUD_TABLE_MASTER=meetings
 CRUD_TABLE_MASTER_IS_HELPER=FALSE
 # omitted for brevity ...
-CRUD_GENERATE=FALSE
 ```
 
-## Ejemplo Avanzado (JSON de la tabla)
+Inmediatamente `autocrudx-tools` leerá la información de la tabla `meetings` anteriormente creada en base de datos y mostrará un JSON como el siguiente, además de la [información general ](../code-debugging.html#informacion-general) y las [herramientas funcionales](../autocrudx-tools/functional-tools.html).
 
-[información general ](../code-debugging.html#informacion-general) y [JSON con herramientas funcionales](../code-debugging.html#herramientas-funcionales-json)
 
 ```json
 {
@@ -396,3 +427,200 @@ CRUD_GENERATE=FALSE
 }
 [nodemon] clean exit - waiting for changes before restart
 ```
+
+Tenga en cuenta que para este ejemplo, `autocrudx-tools` arrojó información de los arreglos `tableMaster`, `tableStructure`, `tableDetailOfMaster` `tableForeignKeysAssoc` y `tableStructureClean` respectivamente.
+
+---
+
+Ahora que el arreglo `tableDetailOfMaster` tiene información, hagamos un pequeño cambio en el archivo [`app.ts`](../app-ts-file.html).
+
+```ts{4}
+// omitted for brevity ...
+main( 
+  config,
+  dataJSON => console.log(dataJSON.tableDetailsOfMaster)
+  // for consoleLogCustom of dataJSON
+)
+```
+
+Ahora `autocrudx-tools` mostrará un JSON como el siguiente.
+
+
+```json
+[
+  {
+    idForeignKey: 'meeting_id',
+    tableName: 'agreements',
+    tableStructure: [
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object]
+    ],
+    tableForeignKeysAssoc: []
+  },
+  {
+    idForeignKey: 'meeting_id',
+    tableName: 'attendes',
+    tableStructure: [
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object]
+    ],
+    tableForeignKeysAssoc: [ [Object], [Object], [Object] ]
+  },
+  {
+    idForeignKey: 'meeting_id',
+    tableName: 'approaches',
+    tableStructure: [
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object]
+    ],
+    tableForeignKeysAssoc: []
+  }
+]
+```
+
+Ahora que la tabla detalle `attendes`, en este caso trae toda información, mostremos un acercamiento.
+ 
+```ts{4}
+// omitted for brevity ...
+main(
+  config,
+  dataJSON => console.log(dataJSON.tableDetailsOfMaster[1])
+  // for consoleLogCustom of dataJSON
+)
+```
+
+Ahora `autocrudx-tools` mostrará un JSON como el siguiente.
+
+```json
+{
+  idForeignKey: 'meeting_id',
+  tableName: 'attendes',
+  tableStructure: [
+    {
+      column_name: 'id',
+      data_type: 'integer',
+      character_maximum_length: null,
+      is_nullable: 'NO',
+      column_default: "nextval('attendes_id_seq'::regclass)"
+    },
+    {
+      column_name: 'meeting_id',
+      data_type: 'integer',
+      character_maximum_length: null,
+      is_nullable: 'YES',
+      column_default: null
+    },
+    {
+      column_name: 'idcard',
+      data_type: 'character varying',
+      character_maximum_length: 255,
+      is_nullable: 'NO',
+      column_default: null
+    },
+    {
+      column_name: 'fullname',
+      data_type: 'character varying',
+      character_maximum_length: 255,
+      is_nullable: 'NO',
+      column_default: null
+    },
+    {
+      column_name: 'email',
+      data_type: 'character varying',
+      character_maximum_length: 255,
+      is_nullable: 'NO',
+      column_default: null
+    },
+    {
+      column_name: 'phone',
+      data_type: 'character varying',
+      character_maximum_length: 255,
+      is_nullable: 'NO',
+      column_default: null
+    },
+    {
+      column_name: 'observation',
+      data_type: 'text',
+      character_maximum_length: null,
+      is_nullable: 'YES',
+      column_default: null
+    },
+    {
+      column_name: 'entity_id',
+      data_type: 'bigint',
+      character_maximum_length: null,
+      is_nullable: 'NO',
+      column_default: null
+    },
+    {
+      column_name: 'dependency_id',
+      data_type: 'bigint',
+      character_maximum_length: null,
+      is_nullable: 'NO',
+      column_default: null
+    },
+    {
+      column_name: 'position_id',
+      data_type: 'bigint',
+      character_maximum_length: null,
+      is_nullable: 'NO',
+      column_default: null
+    },
+    {
+      column_name: 'deleted_at',
+      data_type: 'timestamp without time zone',
+      character_maximum_length: null,
+      is_nullable: 'YES',
+      column_default: null
+    },
+    {
+      column_name: 'created_at',
+      data_type: 'timestamp without time zone',
+      character_maximum_length: null,
+      is_nullable: 'YES',
+      column_default: null
+    },
+    {
+      column_name: 'updated_at',
+      data_type: 'timestamp without time zone',
+      character_maximum_length: null,
+      is_nullable: 'YES',
+      column_default: null
+    }
+  ],
+  tableForeignKeysAssoc: [
+    {
+      column_name: 'entity_id',
+      foreign_table_name: 'entities',
+      foreign_column_name: 'id',
+      constraint_name: 'attendes_entity_id_foreign',
+      table_schema: 'public'
+    },
+    {
+      column_name: 'dependency_id',
+      foreign_table_name: 'dependencies',
+      foreign_column_name: 'id',
+      constraint_name: 'attendes_dependency_id_foreign',
+      table_schema: 'public'
+    },
+    {
+      column_name: 'position_id',
+      foreign_table_name: 'positions',
+      foreign_column_name: 'id',
+      constraint_name: 'attendes_position_id_foreign',
+      table_schema: 'public'
+    }
+  ]
+}
+```
+
+En el momento que conocemos cómo trabajar con las [herramientas funcionales](./functional-tools.html) y cómo buscar la información de tablas, es tiempo de pasar a desarrollar nuestra [carpeta stack](../stack-folder/intro.html).

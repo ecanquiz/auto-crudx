@@ -15,16 +15,15 @@ export default defineConfig({
       { text: 'ecanquiz', link: 'https://ecanquiz.github.io/' }
     ],
     sidebar: [{      
-        path: '/',      // optional, link of the title, which should be an absolute path and must exist
-        sidebarDepth: 1,    // optional, defaults to 1
-        items: [
-          { text: 'Comenzar', link: '/get-start' },
-          { text: 'Instalación', link: '/install' },
-          { text: 'Configurar Entorno', link: '/env-config' },
-          { text: 'Archivo App.ts', link: '/app-ts-file' },
-          { text: 'Depurar Código', link: '/code-debugging' }
-        ]
-      }, {
+      path: '/',      // optional, link of the title, which should be an absolute path and must exist
+      sidebarDepth: 1,    // optional, defaults to 1
+      items: [
+        { text: 'Comenzar', link: '/get-start' },
+        { text: 'Instalación', link: '/install' },
+        { text: 'Configurar Entorno', link: '/env-config' },
+        { text: 'Archivo App.ts', link: '/app-ts-file' },
+        { text: 'Depurar Código', link: '/code-debugging' }
+      ]}, {
       text: 'AutoCRUDx Tools',   // required
       path: '/autocrudx-tools/',
       collapsible: true,
@@ -33,14 +32,18 @@ export default defineConfig({
         { text: 'Introducción', link: '/autocrudx-tools/intro' },
         { text: 'Herramientas Funcionales', link: '/autocrudx-tools/functional-tools' },
         { text: 'Información de Tablas', link: '/autocrudx-tools/table-information' }
-      ]
-    }, {      
-        path: '/',
-        sidebarDepth: 1,
+      ]}, {
+        text: 'Carpeta Stack',   // required
+        path: '/stack-folder/',
+        collapsible: true,
+        collapsed: false,
         items: [
-          { text: 'Carpeta Stack', link: '/stack-folder' },
+          { text: 'Introducción', link: '/stack-folder/intro' },
+          { text: 'Renderizaciones', link: '/stack-folder/renderings' },
+          { text: 'Proceso', link: '/stack-folder/process' },
+          { text: 'Plantillas', link: '/stack-folder/templates' }
         ]
-      }],
+    }],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/ecanquiz/auto-crudx' }
     ],

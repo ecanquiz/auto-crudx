@@ -19,10 +19,7 @@ Con ello podemos revisar, los datos que estamos manejando.
 Para revisar los datos que estamos manejando, debemos avisarle antes a `autocrudx-tools` que en ese momento no queremos generar ningún **CRUD** porque solo queremos consultar los datos. Esto se hace a través de la configuración, estableciendo `CRUD_GENERATE` en `FALSE`.
 
 
-```sh{5}
-# omitted for brevity ...
-CRUD_TABLE_MASTER=countries
-CRUD_TABLE_MASTER_IS_HELPER=TRUE
+```sh
 # omitted for brevity ...
 CRUD_GENERATE=FALSE
 ```
