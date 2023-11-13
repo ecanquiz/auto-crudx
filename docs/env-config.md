@@ -54,8 +54,8 @@ Cópielo y péguelo en la misma raiz del proyecto para crear el archivo de confi
 - **`CRUD_TABLE_MASTER_IS_HELPER`**: Indica si se trata de una simple tabla para llenar una lista desplegable (elemento select html). 
 - **`CRUD_EXCLUDE_FIELDS`**: Campos que contiene la respectiva tabla que desea sean excluidos del CRUD.
 - **`CRUD_GENERATE`**: Indica si desea generar el CRUD o _debuggear_ el _dataJSON_ proveniente de la base de datos que alimenta el CRUD.
-- **`CRUD_STACK_BACKEND`**: Nombre de la carpeta de su [Stack para el Backend](./stack-folder/intro.html#stack-my-backend).
-- **`CRUD_STACK_FRONTEND`**: Nombre de la carpeta de su [Stack para el Frontend](/stack-folder/intro.html#stack-my-frontend).
+- **`CRUD_STACK_BACKEND`**: Nombre de la carpeta de su [Stack para el Backend](./stack/folder.html#stack-my-backend).
+- **`CRUD_STACK_FRONTEND`**: Nombre de la carpeta de su [Stack para el Frontend](/stack/folder.html#stack-my-frontend).
 
 
 ## Carpeta `config`
