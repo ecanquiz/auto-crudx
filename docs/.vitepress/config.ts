@@ -33,15 +33,15 @@ export default defineConfig({
         { text: 'Herramientas Funcionales', link: '/autocrudx-tools/functional-tools' },
         { text: 'Información de Tablas', link: '/autocrudx-tools/table-information' }
       ]}, {
-        text: 'Carpeta Stack',   // required
-        path: '/stack-folder/',
+        text: 'Stack',   // required
+        path: '/stack/',
         collapsible: true,
         collapsed: false,
         items: [
-          { text: 'Introducción', link: '/stack-folder/intro' },
-          { text: 'Renderizaciones', link: '/stack-folder/renderings' },
-          { text: 'Proceso', link: '/stack-folder/process' },
-          { text: 'Plantillas', link: '/stack-folder/templates' }
+          { text: 'Carpeta Stack', link: '/stack/folder' },
+          { text: 'Renderizaciones', link: '/stack/renderings' },
+          { text: 'Proceso', link: '/stack/process' },
+          { text: 'Plantillas', link: '/stack/templates' }
         ]
     }],
     socialLinks: [
