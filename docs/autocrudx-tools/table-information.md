@@ -623,4 +623,4 @@ Ahora `autocrudx-tools` mostrará un JSON como el siguiente.
 }
 ```
 
-En el momento que conocemos cómo trabajar con las [herramientas funcionales](./functional-tools.html) y cómo buscar la información de tablas, es tiempo de pasar a desarrollar nuestra [carpeta stack](../stack-folder/intro.html).
+En el momento que conocemos cómo trabajar con las [herramientas funcionales](./functional-tools.html) y cómo buscar la información de tablas, es tiempo de pasar a desarrollar nuestra [carpeta stack](../stack/folder.html).
