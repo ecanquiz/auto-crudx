@@ -8,9 +8,9 @@ Solo tiene que realizar algunos ajustes en el archivo `.env`. Suponga un proyect
 En vez de hacer esto:
 ```sh
 # omitted for brevity ...
-PATH_BACKEND=my-backend-folder-name
+PATH_BACKEND=my-backend
 PATH_BACKEND_ROOT=app
-PATH_FRONTEND=my-frontend-folder-name
+PATH_FRONTEND=my-frontend
 PATH_FRONTEND_ROOT=src
 # omitted for brevity ...
 ```
@@ -18,9 +18,9 @@ PATH_FRONTEND_ROOT=src
 Haga lo siguiente:
 ```sh
 # omitted for brevity ...
-PATH_BACKEND=my-mvc-folder-name
+PATH_BACKEND=my-mvc
 PATH_BACKEND_ROOT=app
-PATH_FRONTEND=my-mvc-folder-name
+PATH_FRONTEND=my-mvc
 PATH_FRONTEND_ROOT=resources
 # omitted for brevity ...
 ```
@@ -50,7 +50,7 @@ src/
 
 ## `stack/my-backend/`
 
-Tome en cuenta que la carpeta `stack/my-backend/` posee una sub-carpeta llamada [`templates/`](./templates.html) con `N` archivos de plantillas más un archivo llamado [`process.ts`](./process.html) y otro llamado [`renderings.ts`](./renderings.html).
+La carpeta `stack/my-backend/` posee una sub-carpeta llamada [`templates/`](./templates.html) con `N` archivos de plantillas más un archivo llamado [`process.ts`](./process.html) y otro llamado [`renderings.ts`](./renderings.html).
 
 
 
@@ -71,7 +71,7 @@ src/
 
 ## `stack/my-frontend/`
 
-Tome en cuenta que la carpeta `stack/my-frontend/` tambien posee una sub-carpeta llamada [`templates/`](./templates.html) con `N` archivos de plantillas más un archivo llamado [`process.ts`](./process.html) y otro llamado [`renderings.ts`](./renderings.html).
+La carpeta `stack/my-frontend/` tambien posee una sub-carpeta llamada [`templates/`](./templates.html) con `N` archivos de plantillas más un archivo llamado [`process.ts`](./process.html) y otro llamado [`renderings.ts`](./renderings.html).
 
 ```txt{6,7,8,9,10}
 src/
@@ -91,4 +91,4 @@ src/
 
 ## Clonclusión
 
-Tanto la carpeta `stack/my-backend/` como la carpeta `stack/my-frontend/` poseen respectivamente la misma estructura.
+Tome en cuenta que tanto la carpeta `stack/my-backend/` como la carpeta `stack/my-frontend/` poseen respectivamente la misma estructura.
