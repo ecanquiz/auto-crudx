@@ -5,9 +5,9 @@ import{_ as s,o as a,c as n,S as o}from"./chunks/framework.233e4693.js";const F=
 <span class="line"><span style="color:#A6ACCD;">DB_USER</span><span style="color:#89DDFF;">=</span><span style="color:#C3E88D;">postgres</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#A6ACCD;">PATH_USER</span><span style="color:#89DDFF;">=</span><span style="color:#C3E88D;">/home/username</span></span>
-<span class="line"><span style="color:#A6ACCD;">PATH_BACKEND</span><span style="color:#89DDFF;">=</span><span style="color:#C3E88D;">backend-folder-name</span></span>
+<span class="line"><span style="color:#A6ACCD;">PATH_BACKEND</span><span style="color:#89DDFF;">=</span><span style="color:#C3E88D;">my-backend</span></span>
 <span class="line"><span style="color:#A6ACCD;">PATH_BACKEND_ROOT</span><span style="color:#89DDFF;">=</span><span style="color:#C3E88D;">app</span></span>
-<span class="line"><span style="color:#A6ACCD;">PATH_FRONTEND</span><span style="color:#89DDFF;">=</span><span style="color:#C3E88D;">frontend-folder-name</span></span>
+<span class="line"><span style="color:#A6ACCD;">PATH_FRONTEND</span><span style="color:#89DDFF;">=</span><span style="color:#C3E88D;">my-frontend</span></span>
 <span class="line"><span style="color:#A6ACCD;">PATH_FRONTEND_ROOT</span><span style="color:#89DDFF;">=</span><span style="color:#C3E88D;">src</span></span>
 <span class="line"><span style="color:#A6ACCD;">PATH_MODULE</span><span style="color:#89DDFF;">=</span><span style="color:#C3E88D;">User</span></span>
 <span class="line"></span>
