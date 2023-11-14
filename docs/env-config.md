@@ -13,9 +13,9 @@ DB_PORT=5432
 DB_USER=postgres
 
 PATH_USER=/home/username
-PATH_BACKEND=backend-folder-name
+PATH_BACKEND=my-backend
 PATH_BACKEND_ROOT=app
-PATH_FRONTEND=frontend-folder-name
+PATH_FRONTEND=my-frontend
 PATH_FRONTEND_ROOT=src
 PATH_MODULE=User
 
