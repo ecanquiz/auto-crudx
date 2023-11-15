@@ -1,6 +1,13 @@
 # Proceso
 
-`./stack/backend-folder-name/process.ts`
+>Una vez declaradas las [renderizaciones](./renderings.html) establecemos el proceso.
+
+## Archivo `process.ts`
+
+En el archivo `./stack/my-backend/process.ts` declaremos el proceso para generar el renderizado del **Backend**.
+
+
+`./stack/my-backend/process.ts`
 ```ts
 import config from '@config/index'
 import { rendering } from 'autocrudx-tools'
@@ -39,6 +46,29 @@ export default async (
   rendering(backend.masterRoute(params))
 }
 ```
+
+- Tome en cuenta que empezamos importamos el `config` de nuestro programa, la función `rendering` del módulo `autocrudx-tools` más el tipado `ParamsAll` y `tableDetailsOfMasterCustomized` del mismo módulo.
+
+- Tenga presente que el módulo `proccess` exporta una función `async` que devuelve una `Promise<void>`. Dicha función recibe un argumento llamado `paramsOmitOutput` tipo `Omit<ParamsAll, 'output'>` como parametro.
+
+- Lo primero que hace la función `proccess` es importar dinámicamente el módulo [`renderings.ts`](./renderings.html) en la constante `backend`.
+
+- Lo segundo que hace la función `proccess` es declarar la constante `params` para agrupar todos los parametros necesarios para el proceso en sí.
+
+- El resto del proceso se divide en 2 partes: La condición si el largo del arreglo de **Tablas Detalles del Maestro** (`params.tableDetailsOfMaster.length`) es diferente de cero (`0`) más el resto del proceso.
+
+- Preste atención que para renderizar cualquier plantilla basta con ejecutar la función `rendering`, perteneciente al módulo `autocrudx-tools`, pasándole como argumento cualquiera de las funciones importadas dinámicamente desde el módulo `renderings` del correspondiente **_Stack_**.
+
+Algo como esto:
+
+```ts
+rendering(myStackName.fooTemplateName(params))
+rendering(myStackName.barTemplateName(params))
+rendering(myStackName.bazTemplateName(params))
+```
+
+En el ejemplo anterior `myStackName` sería algo como la constante `backend` declarada aguas arriba. En el próximo ejemplo note que esta constante no se llamará `backend` sino `frontend`. Usted puede colocarle en nombre que desee, ya que la forma no es relevante.
+
 
 `./stack/frontend-folder-name/process.ts`
 ```ts
@@ -85,3 +115,40 @@ export default async (
   rendering(frontend.masterTypes(params))
 }
 ```
+
+- Finalmente, tenga claro que para renderizar todas las **Tablas Detalles del Maestro**, cuando las hay, es decir: si se cumple que  `(params.tableDetailsOfMaster.length!==0)`, simplemente recorremos el correspondiente arreglo con el método `forEach` de JavaScript.
+
+```ts
+// omitted for brevity ...
+params.tableDetailsOfMaster.forEach(function(table){
+  const paramsWhitDetail = {
+    ...params,
+    tableDetailsCurrent: (
+      table as unknown as tableDetailsOfMasterCustomized
+    )
+  }
+  rendering(myStackName.fooTemplateName(paramsWhitDetail))
+  rendering(myStackName.barTemplateName(paramsWhitDetail))
+  // omitted for brevity ...     
+})
+// omitted for brevity ...
+```
+
+Tome en cuenta cuando recorra el arreglo `params.tableDetailsOfMaster`, que por cada `table` detalles "actual" se creará una constante llamada `paramsWhitDetail` para ser pasada como argumento respectivamente. Siéntase libre de colocarle el nombre que desee, con tal y cumpla con el tipado correspondiente.
+
+```ts{8,9,10,11,12,13}
+type Rendering = {
+    outputFile: string;
+    outputPath: string;
+    params: ParamsAll;
+    template: string;
+}
+
+const rendering: ({
+  outputFile,
+  outputPath,
+  params,
+  template
+}: Rendering) => void
+```
+
