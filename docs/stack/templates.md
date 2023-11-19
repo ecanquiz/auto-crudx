@@ -1,6 +1,132 @@
 # Plantillas
 
+En este apartado crearemos las plantillas necesarias para hacer un CRUD tipo Tareas.
+
+
+## Configuración
+
+Para configuración necesitará algo como lo siguiente.
+
+`.env`
+```sh
+DB_DATABASE=crud_todo_db
+## omitted for brevity ...
+
+PATH_USER=/home/username/crud-todo
+PATH_BACKEND=api-laravel
+PATH_BACKEND_ROOT=app
+PATH_FRONTEND=spa-vue
+PATH_FRONTEND_ROOT=src
+PATH_MODULE=
+
+CRUD_SCHEMA=public
+CRUD_TABLE_MASTER=tasks
+CRUD_TABLE_MASTER_IS_HELPER=FALSE
+CRUD_STACK_BACKEND=my-backend-example
+CRUD_STACK_FRONTEND=my-frontend-example
+## omitted for brevity ...
+```
+
+Empezaremos por las plantillas del **Backend**.
+
+
 ## `stack/my-backend-example`
+
+Para el lado del _backend_ esta será la plantilla del **route**.
+
+`./src/stack/my-backend-example/templates/route`
+```txt
+<?php
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\<%= fn.uCamelCase(fn.singular(tableMaster)); %>Controller;
+
+Route::prefix('<%= tableMaster; %>')->group(function () {
+    Route::get('/', [<%= fn.uCamelCase(fn.singular(tableMaster)); %>Controller::class, 'index']);
+    Route::get('/{<%= fn.singular(tableMaster); %>}', [<%= fn.uCamelCase(fn.singular(tableMaster)); %>Controller::class, 'show']); 
+    Route::post('/', [<%= fn.uCamelCase(fn.singular(tableMaster)); %>Controller::class, 'store']);
+    Route::put('/{<%= fn.singular(tableMaster); %>}', [<%= fn.uCamelCase(fn.singular(tableMaster)); %>Controller::class, 'update']);
+    Route::delete('/{<%= fn.singular(tableMaster); %>}', [<%= fn.uCamelCase(fn.singular(tableMaster)); %>Controller::class,'destroy']);
+});
+```
+
+Esta plantilla deberá generar el siguiente archivo.
+
+`/home/username/crud-todo/api-laravel/app/Routes/apiTask.php`
+```php
+<?php
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TaskController;
+
+Route::prefix('tasks')->group(function () {
+    Route::get('/', [TaskController::class, 'index']);
+    Route::get('/{task}', [TaskController::class, 'show']); 
+    Route::post('/', [TaskController::class, 'store']);
+    Route::put('/{task}', [TaskController::class, 'update']);
+    Route::delete('/{task}', [TaskController::class,'destroy']);
+});
+```
+
+Tome en cuenta que las rutas es el único código que deberá cortar y pegar respectivamente en el lugar que corresponde. Es decir que, debe actualizar su correspondiente archivo `/home/username/crud-todo/api-laravel/routes/api.php` con el código anterior.
+
+---
+
+Continuamos con el **modelo**. Este será el respectivo archivo.
+
+`./src/stack/my-backend-example/templates/model`
+```txt
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class <%= fn.uCamelCase(fn.singular(tableMaster)); %> extends Model
+{
+    use HasFactory, SoftDeletes;
+    
+    protected $fillable = [<%
+        tableStructure.forEach(function(field, index) {
+        if  (fn.v.noIdAndExcludeFields(field.column_name)) { %>
+        '<%= field.column_name; %>'<%= fn.addCommaToArr(tableStructure, index, 0) -%><%
+        }}); %>
+    ];
+}
+```
+
+Esta plantilla deberá generar el siguiente archivo.
+
+`/home/username/crud-todo/api-laravel/app/Models/Task.php`
+
+```php
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class Task extends Model
+{
+    use HasFactory, SoftDeletes;
+    
+    protected $fillable = [
+        'title', 
+        'description', 
+        'done'
+    ];
+}
+```
+
+---
+
+Concluimos el _backend_ con el **controlador**. Esta será el respectivo archivo de plantilla.
 
 `./src/stack/my-backend-example/templates/controller`
 ```txt
@@ -70,6 +196,9 @@ class <%= fn.uCamelCase(fn.singular(tableMaster)); %>Controller extends Controll
 }
 ```
 
+Esta plantilla deberá generar el siguiente archivo.
+
+`/home/username/crud-todo/api-laravel/app/Http/Controllers/TaskController.php`
 ```php
 <?php
 
@@ -134,81 +263,9 @@ class TaskController extends Controller
 }
 ```
 
-`./src/stack/my-backend-example/templates/model`
-```txt
-<?php
+Si ha llegado hasta aquí, entonces ya debe tener construido su respectivo código de la **API** que funcionará como **backend** para el **CRUD de Tareas**.
 
-namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class <%= fn.uCamelCase(fn.singular(tableMaster)); %> extends Model
-{
-    use HasFactory, SoftDeletes;
-    
-    protected $fillable = [<%
-        tableStructure.forEach(function(field, index) {
-        if  (fn.v.noIdAndExcludeFields(field.column_name)) { %>
-        '<%= field.column_name; %>'<%= fn.addCommaToArr(tableStructure, index, 0) -%><%
-        }}); %>
-    ];
-}
-```
-
-```php
-<?php
-
-namespace App\Models;
-
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
-
-class Task extends Model
-{
-    use HasFactory, SoftDeletes;
-    
-    protected $fillable = [
-        'title', 
-        'description', 
-        'done'
-    ];
-}
-```
-
-`./src/stack/my-backend-example/templates/route`
-```txt
-<?php
-
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\<%= fn.uCamelCase(fn.singular(tableMaster)); %>Controller;
-
-Route::prefix('<%= tableMaster; %>')->group(function () {
-    Route::get('/', [<%= fn.uCamelCase(fn.singular(tableMaster)); %>Controller::class, 'index']);
-    Route::get('/{<%= fn.singular(tableMaster); %>}', [<%= fn.uCamelCase(fn.singular(tableMaster)); %>Controller::class, 'show']); 
-    Route::post('/', [<%= fn.uCamelCase(fn.singular(tableMaster)); %>Controller::class, 'store']);
-    Route::put('/{<%= fn.singular(tableMaster); %>}', [<%= fn.uCamelCase(fn.singular(tableMaster)); %>Controller::class, 'update']);
-    Route::delete('/{<%= fn.singular(tableMaster); %>}', [<%= fn.uCamelCase(fn.singular(tableMaster)); %>Controller::class,'destroy']);
-});
-```
-
-```php
-<?php
-
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TaskController;
-
-Route::prefix('tasks')->group(function () {
-    Route::get('/', [TaskController::class, 'index']);
-    Route::get('/{task}', [TaskController::class, 'show']); 
-    Route::post('/', [TaskController::class, 'store']);
-    Route::put('/{task}', [TaskController::class, 'update']);
-    Route::delete('/{task}', [TaskController::class,'destroy']);
-});
-```
 
 ## `stack/my-frontend-example`
