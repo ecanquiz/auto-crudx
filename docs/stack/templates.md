@@ -269,3 +269,191 @@ Si ha llegado hasta aquí, entonces ya debe tener construido su respectivo códi
 
 
 ## `stack/my-frontend-example`
+
+```txt
+<script lang="ts">
+import { defineComponent } from 'vue'
+import axios from 'axios'
+
+export default defineComponent({
+  data() {
+    return {
+      <%= tableMaster; %>: []
+    }
+  },
+  mounted() {
+    this.get<%= fn.uCamelCase(tableMaster); %>();
+  },
+  methods: {
+    get<%= fn.uCamelCase(tableMaster); %>() {
+      axios
+        .get('http://localhost:8000/api/<%= tableMaster; %>')
+        .then(response => this.<%= tableMaster; %> = response.data )
+        .catch(
+          error => console.log({
+            errorCode: error.code, errorMessage: error.message
+          })
+        );
+    },
+    remove<%= fn.uCamelCase(fn.singular(tableMaster)); %>(id) {
+      axios
+        .delete(`http://localhost:8000/api/<%= tableMaster; %>/${id}`)
+        .then(response => {
+          console.log({ statusCode: response.status })
+          if (response.status===204)
+            this.get<%= fn.uCamelCase(tableMaster); %>();
+          })
+        .catch(
+          error => console.log({
+            errorCode: error.code, errorMessage: error.message
+          })
+        );
+    }
+  }
+})
+</script>
+
+<template>
+  <div class="container mx-auto">
+    <h1 class="text-2xl" align="center">ToDo List</h1>    
+    <router-link
+      :to="{name: 'create'}"
+      class="btn btn-primary"
+      >Create
+    </router-link>
+    <table class="min-w-full text-left text-sm font-light">
+      <thead class="border-b font-medium dark:border-neutral-500">
+        <tr><%
+          tableStructure.forEach(function(field){%>
+          <th class=""><%= field.column_name; %></th><%
+          }); %>
+          <th class="p-2">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          v-for="<%= fn.singular(tableMaster); %> in <%= tableMaster; %>"
+          :key="<%= fn.singular(tableMaster); %>.id"
+          class="border-b dark:border-neutral-500"
+        ><%
+        tableStructure.forEach((field) => { %>
+          <td class="">{{ <%= fn.singular(tableMaster); %>.<%= field.column_name; %> }}</td><%});
+        %>        
+          <td class="p-2">
+            <button
+              class="btn btn-success m-1 text-sm"
+              @click="$router.push({name: 'edit', params: {id: <%= fn.singular(tableMaster); %>.id}})"
+            >
+              Edit
+            </button>
+            <button
+              class="btn btn-danger m-1 text-sm"
+              @click="remove<%= fn.uCamelCase(fn.singular(tableMaster)); %>(<%= fn.singular(tableMaster); %>.id)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h4 v-if="<%= tableMaster; %>.length === 0">Empty list.</h4>
+  </div>
+</template>
+```
+
+Se verá sí:
+
+```vue
+<script lang="ts">
+import { defineComponent } from 'vue'
+import axios from 'axios'
+
+export default defineComponent({
+  data() {
+    return {
+      tasks: []
+    }
+  },
+  mounted() {
+    this.getTasks();
+  },
+  methods: {
+    getTasks() {
+      axios
+        .get('http://localhost:8000/api/tasks')
+        .then(response => this.tasks = response.data )
+        .catch(
+          error => console.log({
+            errorCode: error.code, errorMessage: error.message
+          })
+        );
+    },
+    removeTask(id) {
+      axios
+        .delete(`http://localhost:8000/api/tasks/${id}`)
+        .then(response => {
+          console.log({ statusCode: response.status })
+          if (response.status===204)
+            this.getTasks();
+          })
+        .catch(
+          error => console.log({
+            errorCode: error.code, errorMessage: error.message
+          })
+        );
+    }
+  }
+})
+</script>
+
+<template>
+  <div class="container mx-auto">
+    <h1 class="text-2xl" align="center">ToDo List</h1>    
+    <router-link
+      :to="{name: 'create'}"
+      class="btn btn-primary"
+      >Create
+    </router-link>
+    <table class="min-w-full text-left text-sm font-light">
+      <thead class="border-b font-medium dark:border-neutral-500">
+        <tr>
+          <th class="">id</th>
+          <th class="">title</th>
+          <th class="">description</th>
+          <th class="">done</th>
+          <th class="p-2">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          v-for="task in tasks"
+          :key="task.id"
+          class="border-b dark:border-neutral-500"
+        >
+          <td class="">{{ task.id }}</td>
+          <td class="">{{ task.title }}</td>
+          <td class="">{{ task.description }}</td>
+          <td class="">{{ task.done }}</td>        
+          <td class="p-2">
+            <button
+              class="btn btn-success m-1 text-sm"
+              @click="$router.push({name: 'edit', params: {id: task.id}})"
+            >
+              Edit
+            </button>
+            <button
+              class="btn btn-danger m-1 text-sm"
+              @click="removeTask(task.id)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h4 v-if="tasks.length === 0">Empty list.</h4>
+  </div>
+</template>
+```
+
+
