@@ -270,6 +270,10 @@ Si ha llegado hasta aquí, entonces ya debe tener construido su respectivo códi
 
 ## `stack/my-frontend-example`
 
+Para el lado del _frontend_ esta será la plantilla que genera la vista _datagrid_.
+
+`./src/stack/my-frontend-example/templates/masterDatagrid`
+
 ```txt
 <script lang="ts">
 import { defineComponent } from 'vue'
@@ -361,8 +365,9 @@ export default defineComponent({
 </template>
 ```
 
-Se verá sí:
+Esta plantilla deberá generar el siguiente archivo.
 
+`/home/username/crud-todo/spa-vue/src/views/Task/Index.vue`
 ```vue
 <script lang="ts">
 import { defineComponent } from 'vue'
@@ -456,4 +461,14 @@ export default defineComponent({
 </template>
 ```
 
+Esta será la plantilla que genera la vista _CreateOrEdit.
+`./src/stack/my-frontend-example/templates/masterCreateOrEdit`
 
+Esta plantilla deberá generar el siguiente archivo.
+`/home/username/crud-todo/spa-vue/src/views/Task/CreateOrEdit.vue`
+
+Esta será la plantilla que genera el componente _FormTask_.
+`./src/stack/my-frontend-example/templates/masterForm`
+
+Esta plantilla deberá generar el siguiente archivo.
+`/home/username/crud-todo/spa-vue/src/components/Task/FormTask.vue`
