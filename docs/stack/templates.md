@@ -461,14 +461,252 @@ export default defineComponent({
 </template>
 ```
 
-Esta será la plantilla que genera la vista _CreateOrEdit.
+---
+
+Esta será la plantilla que genera la vista _CreateOrEdit_.
+
 `./src/stack/my-frontend-example/templates/masterCreateOrEdit`
+```txt
+<script lang="ts">
+import { defineComponent } from 'vue'
+import axios from 'axios'
+import Form<%= fn.uCamelCase(fn.singular(tableMaster)); %> from '../../components/<%= fn.uCamelCase(fn.singular(tableMaster)); %>/Form<%= fn.uCamelCase(fn.singular(tableMaster)); %>.vue'
+
+export default defineComponent({
+  props: {
+    id: String
+  },
+  components: {
+    Form<%= fn.uCamelCase(fn.singular(tableMaster)); %>
+  },
+  data() {
+    return {
+      <%= fn.singular(tableMaster); %>: {}
+    }
+  },
+  mounted() {
+    if (this.$props.id)
+      this.get<%= fn.uCamelCase(fn.singular(tableMaster)); %>();
+  },
+  computed: {
+    isRenderable() {
+        return (this.$props.id && Object.keys(this.<%= fn.singular(tableMaster); %>).length > 0)
+          || this.$props.id===undefined
+    }
+  },  
+  methods: {
+    get<%= fn.uCamelCase(fn.singular(tableMaster)); %>() {
+      axios
+        .get(`http://localhost:8000/api/<%= tableMaster; %>/${this.$props.id}`)
+        .then(response => this.<%= fn.singular(tableMaster); %> = response.data )
+        .catch(
+          error => console.log({
+            errorCode: error.code, errorMessage: error.message
+          })
+        );
+    },
+    submit(payload) {
+      if (this.$props.id===undefined) {
+        axios
+          .post("http://localhost:8000/api/<%= tableMaster; %>", payload)
+          .then(response => (
+            this.$router.push({name: 'index'})            
+          ))
+          .catch(error => console.log(error))
+          //.finally(() => this.pending = false)
+      } else {
+        axios
+          .put(`http://localhost:8000/api/<%= tableMaster; %>/${this.$props.id}`, payload)
+          .then(response => (
+            this.$router.push({name: 'index'})            
+          ))
+          .catch(error => console.log(error))
+          //.finally(() => this.pending = false)
+      }
+    }  
+  }
+})
+</script>
+
+<template>
+  <div class="container row col-md-6 mx-auto w-1/2">
+    <h1 class="text-2xl" align="center">
+      {{$props.id ? 'Editing' : 'Creating'}} Tast
+    </h1>
+    <Form<%= fn.uCamelCase(fn.singular(tableMaster)); %> v-if="isRenderable" :<%= fn.singular(tableMaster); %>="<%= fn.singular(tableMaster); %>" @submit='submit' />
+  </div>
+</template>
+```
 
 Esta plantilla deberá generar el siguiente archivo.
+
 `/home/username/crud-todo/spa-vue/src/views/Task/CreateOrEdit.vue`
+```vue
+<script lang="ts">
+import { defineComponent } from 'vue'
+import axios from 'axios'
+import FormTask from '../../components/Task/FormTask.vue'
 
-Esta será la plantilla que genera el componente _FormTask_.
+export default defineComponent({
+  props: {
+    id: String
+  },
+  components: {
+    FormTask
+  },
+  data() {
+    return {
+      task: {}
+    }
+  },
+  mounted() {
+    if (this.$props.id)
+      this.getTask();
+  },
+  computed: {
+    isRenderable() {
+        return (this.$props.id && Object.keys(this.task).length > 0)
+          || this.$props.id===undefined
+    }
+  },  
+  methods: {
+    getTask() {
+      axios
+        .get(`http://localhost:8000/api/tasks/${this.$props.id}`)
+        .then(response => this.task = response.data )
+        .catch(
+          error => console.log({
+            errorCode: error.code, errorMessage: error.message
+          })
+        );
+    },
+    submit(payload) {
+      if (this.$props.id===undefined) {
+        axios
+          .post("http://localhost:8000/api/tasks", payload)
+          .then(response => (
+            this.$router.push({name: 'index'})            
+          ))
+          .catch(error => console.log(error))
+          //.finally(() => this.pending = false)
+      } else {
+        axios
+          .put(`http://localhost:8000/api/tasks/${this.$props.id}`, payload)
+          .then(response => (
+            this.$router.push({name: 'index'})            
+          ))
+          .catch(error => console.log(error))
+          //.finally(() => this.pending = false)
+      }
+    }  
+  }
+})
+</script>
+
+<template>
+  <div class="container row col-md-6 mx-auto w-1/2">
+    <h1 class="text-2xl" align="center">
+      {{$props.id ? 'Editing' : 'Creating'}} Tast
+    </h1>
+    <FormTask v-if="isRenderable" :task="task" @submit='submit' />
+  </div>
+</template>
+```
+
+---
+
+Y esta será la plantilla que genera el componente _FormTask_.
+
 `./src/stack/my-frontend-example/templates/masterForm`
+```txt
+<script lang="ts">
+import { defineComponent } from 'vue'
 
+export default defineComponent({
+  props: {
+    <%= fn.singular(tableMaster); %>: Object    
+  },
+  data() {
+    return {
+      form: this.$props.<%= fn.singular(tableMaster); %>
+    }
+  },
+  emits: ['submit'],
+  methods: {
+    submit() {          
+      this.$emit('submit', this.form )
+    }
+  }
+})
+</script>
+
+<template>
+  <form @submit.prevent="submit">
+    <% tableStructure.forEach(function(field) {
+      if  (!['id', 'created_at', 'updated_at', 'deleted_at'].includes(field.column_name)) {
+      if (field.data_type === "character varying") {%><div class="m-2">
+      <label><%= fn.uCamelCase(field.column_name); %></label>
+      <input type="text" v-model="form.<%= field.column_name; %>">
+    </div>        
+    <%} else if ((field.data_type === "text")) {%><div class="m-4">          
+      <label><%= fn.uCamelCase(field.column_name); %></label>
+      <textarea v-model="form.<%= field.column_name; %>"></textarea>
+    </div>
+    <%} else if ((field.data_type === "boolean")) {%><div class="m-4">
+      <label><%= fn.uCamelCase(field.column_name); %></label>
+      <input type="checkbox" v-model="form.<%= field.column_name; %>"/>
+    </div>
+    <%}%><%}});%>
+    <button type="submit" class="btn btn-primary m-2">
+      Save
+    </button>
+  </form>
+</template>
+```
 Esta plantilla deberá generar el siguiente archivo.
+
 `/home/username/crud-todo/spa-vue/src/components/Task/FormTask.vue`
+```vue
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  props: {
+    task: Object    
+  },
+  data() {
+    return {
+      form: this.$props.task
+    }
+  },
+  emits: ['submit'],
+  methods: {
+    submit() {          
+      this.$emit('submit', this.form )
+    }
+  }
+})
+</script>
+
+<template>
+  <form @submit.prevent="submit">
+    <div class="m-2">
+      <label>Title</label>
+      <input type="text" v-model="form.title">
+    </div>        
+    <div class="m-4">          
+      <label>Description</label>
+      <textarea v-model="form.description"></textarea>
+    </div>
+    <div class="m-4">
+      <label>Done</label>
+      <input type="checkbox" v-model="form.done"/>
+    </div>
+    
+    <button type="submit" class="btn btn-primary m-2">
+      Save
+    </button>
+  </form>
+</template>
+```
+
