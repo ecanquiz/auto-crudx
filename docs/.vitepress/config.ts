@@ -29,7 +29,7 @@ export default defineConfig({
       collapsible: true,
       collapsed: false,
       items: [
-        { text: 'Introducción', link: '/autocrudx-tools/intro' },
+        { text: 'Importar AutoCRUDx Tools', link: '/autocrudx-tools/import-autocrudx-tools' },
         { text: 'Herramientas Funcionales', link: '/autocrudx-tools/functional-tools' },
         { text: 'Información de Tablas', link: '/autocrudx-tools/table-information' }
       ]}, {
