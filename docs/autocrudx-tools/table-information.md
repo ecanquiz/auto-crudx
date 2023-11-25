@@ -1,8 +1,6 @@
 # Información de Tablas
 
-
-Al aplicar la configuración del [depurador de código](../code-debugging.html), `autocrudx-tools` mostrará en pantalla la información de la tabla a la cual desea generar el CRUD. 
-
+>Al aplicar la configuración del [depurador de código](../code-debugging.html), `autocrudx-tools` mostrará en pantalla la información de la tabla a la cual desea generar el CRUD. 
 ```sh
 # omitted for brevity ...
 CRUD_GENERATE=FALSE
@@ -12,17 +10,15 @@ Tenga en cuenta lo siguiente:
 
 - `tableMaster`: Nombre de la tabla maestro.
 - `tableStructure`: Estructura de la tabla maestro.
-- `tableDetailOfMaster`: Tablas detalles del mMaestro (si las hubiera).
-- `tableMasterForeignKeysAssoc`: Tablas asociativas del maestro (si las hubiera).
+- `tableDetailOfMaster`: Tabla(s) detalle(s) del maestro, si la(s) hubiera.
+- `tableMasterForeignKeysAssoc`: Tabla(s) asociativa(s) del maestro, si la(s) hubiera.
 - `tableStructureClean`: Estructura de la tabla maestro sin los campos `created_at`, `updated_at` y `deleted_at`.
 
-Vamos a los ejemplos...
+Veamos los ejemplos...
 
 ## Ejemplo Básico
 
-Este ejemplo es para generar un CRUD a una tabla llamada `countries`. Recuerde antes aplicar la configuración del [depurador de código](../code-debugging.html) para mostrar en pantalla la información de la tabla.
-
-
+>Este ejemplo es para generar un CRUD a una tabla llamada `countries`. Recuerde antes aplicar la configuración del [depurador de código](../code-debugging.html) para mostrar en pantalla la información de la tabla.
 ```sh
 # omitted for brevity ...
 CRUD_TABLE_MASTER=countries
@@ -99,9 +95,7 @@ Tenga en cuenta que para este ejemplo, `autocrudx-tools` arrojó información de
 
 ## Ejemplo Intermedio
 
-
-Este ejemplo es para generar un CRUD a una tabla llamada `people`. Recuerde antes aplicar la configuración del [depurador de código](../code-debugging.html) para mostrar en pantalla la información de la tabla.
-
+>Este ejemplo es para generar un CRUD a una tabla llamada `people`. Recuerde antes aplicar la configuración del [depurador de código](../code-debugging.html) para mostrar en pantalla la información de la tabla.
 ```sh
 # omitted for brevity ...
 CRUD_TABLE_MASTER=people
@@ -270,8 +264,7 @@ Tenga en cuenta que para este ejemplo, `autocrudx-tools` arrojó información de
 
 ## Ejemplo Avanzado
 
-Este ejemplo es para generar un CRUD a una tabla llamada `meetings`. Recuerde antes aplicar la configuración del [depurador de código](../code-debugging.html) para mostrar en pantalla la información de la tabla.
-
+>Este ejemplo es para generar un CRUD a una tabla llamada `meetings`. Recuerde antes aplicar la configuración del [depurador de código](../code-debugging.html) para mostrar en pantalla la información de la tabla.
 ```sh
 # omitted for brevity ...
 CRUD_TABLE_MASTER=meetings
@@ -432,8 +425,7 @@ Tenga en cuenta que para este ejemplo, `autocrudx-tools` arrojó información de
 
 ---
 
-Ahora que el arreglo `tableDetailOfMaster` tiene información, hagamos un pequeño cambio en el archivo [`app.ts`](../app-ts-file.html).
-
+>Ahora que el arreglo `tableDetailOfMaster` tiene información, hagamos un pequeño cambio en el archivo [`app.ts`](../app-ts-file.html) para indagar al respecto.
 ```ts{4}
 // omitted for brevity ...
 main( 
@@ -487,8 +479,7 @@ Ahora `autocrudx-tools` mostrará un JSON como el siguiente.
 ]
 ```
 
-Ahora que la tabla detalle `attendes`, en este caso trae toda información, mostremos un acercamiento.
- 
+>Ahora que la tabla detalle `attendes`, en este caso trae toda información, mostremos un acercamiento.
 ```ts{4}
 // omitted for brevity ...
 main(
@@ -623,4 +614,6 @@ Ahora `autocrudx-tools` mostrará un JSON como el siguiente.
 }
 ```
 
-En el momento que conocemos cómo trabajar con las [herramientas funcionales](./functional-tools.html) y cómo buscar la información de tablas, es tiempo de pasar a desarrollar nuestra [carpeta stack](../stack/folder.html).
+---
+
+>En el momento que conocemos cómo trabajar con las [herramientas funcionales](./functional-tools.html) y cómo buscar la información de tablas, es tiempo de pasar a desarrollar nuestra [carpeta stack](../stack/folder.html).

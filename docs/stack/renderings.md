@@ -116,5 +116,5 @@ export default {
 
 En este caso tenemos `masterDatagrid`, `masterRoutes`, `masterServices`, `masterTypes` y `masterUseDatagrid`.
 
-Tenga en cuenta que en este objeto puede agregar todas las propiedades según la cantidad de archivos que desea generar. Bien puede quitar, agregar propiedades o incluso, cambiarle el nombre según corresponda a su correspondiente `stack`.
+>Tenga en cuenta que en este objeto puede agregar todas las propiedades según la cantidad de archivos que desea generar. Bien puede quitar, agregar propiedades o incluso, cambiarle el nombre según corresponda a su correspondiente `stack`.
 

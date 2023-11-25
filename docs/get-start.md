@@ -34,12 +34,12 @@ Los CRUDs avanzados son los más complejos, porque generalmente están constitui
 </video>
 
 :::tip Información
-Usted puede consultar el código generado, tanto del [Backend](https://github.com/CaribesTIC/laravuel-api/tree/main/Modules/Meeting) como del [Frontend](https://github.com/CaribesTIC/laravuel-spa/tree/main/src/modules/Meeting), de ejemplos anteriores. 
+El código generado de ejemplos anteriores se basa en una arquitectura muy particular. Es recomendable que use su propio criterio cuando cree el suyo. Usted puede consultar el código generado, tanto del [Backend](https://github.com/CaribesTIC/laravuel-api/tree/main/Modules/Meeting) como del [Frontend](https://github.com/CaribesTIC/laravuel-spa/tree/main/src/modules/Meeting), de ejemplos anteriores.
 :::
 
 ## ¿ Por qué Auto-CRUDx ?
 
-Las funciones básicas en bases de datos o la capa de persistencia en un software son tareas repetitivas que se hacen regularmente cuando de desarrollo de software se trata. Por lo que, una vez definida una estructura estandar, para los típicos CRUDs, es útil una herramienta que los genere automáticamente.
+>Las funciones básicas en bases de datos o la capa de persistencia en un software son tareas repetitivas que se hacen regularmente cuando de desarrollo de software se trata. Por lo que, una vez definida una estructura estandar, para los típicos CRUDs, es útil una herramienta que los genere automáticamente.
 
 ## ¿ Qué es Auto-CRUDx ?
 
@@ -53,11 +53,13 @@ Las funciones básicas en bases de datos o la capa de persistencia en un softwar
 ***Auto-CRUDx*** tampoco es una herramienta para construir _Scaffolds_. Por lo tanto, no genera _Layout_, _Sign In_, _Sign Up_, _Password Recovery_, etc. 
 :::
 
-Tenga en cuenta que el proyecto `node-auto-crudx` usa como dependencia el paquete `autocrudx-tools`.
+**_Auto-CRUDx_** es un proyecto alojado en **GitHub** llamado [`node-auto-crudx`](https://github.com/ecanquiz/node-auto-crudx) que brinda la posibilidad de que usted mismo cree su propio generador de CRUDs. Tenga en cuenta que el proyecto `node-auto-crudx` usa como dependencia el paquete [`autocrudx-tools`](./autocrudx-tools/import-autocrudx-tools.html).
 
 ![get-start](./assets/get-start-4.jpg)
 
-El proyecto `node-auto-crudx` leerá su base de datos y escribirá el código generado aparte en su proyecto. El anterior diagrama muestra un **_stack_** orientado a micro-servicios, no obstante, funciona igual si se tratara de un **_stack_** MVC.
+>Tenga presente que el proyecto `node-auto-crudx` leerá su base de datos y escribirá el código generado aparte en otro(s) proyecto(s).
+
+El anterior diagrama muestra un **_stack_** orientado a micro-servicios, no obstante, funciona igual si se tratara de un **_stack_** MVC.
 
 ## Requisitos
 

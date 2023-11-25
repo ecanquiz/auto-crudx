@@ -1,11 +1,30 @@
 # Plantillas
 
-En este apartado crearemos las plantillas necesarias para hacer un CRUD tipo Tareas.
+>En este apartado crearemos las plantillas necesarias para hacer un CRUD de Tareas.
+
+Imagine que usted creo una tabla llamada `tasks` a partir de una migración de Laravel como la siguiente.
+
+```php
+<?php
+// omitted for brevity ...
+public function up(): void
+{
+    Schema::create('tasks', function (Blueprint $table) {
+        $table->id();
+        $table->string('title', 50);
+        $table->text('description');
+        $table->boolean('done')->default(false);
+        $table->softDeletes();
+        $table->timestamps();
+    });
+}
+// omitted for brevity ...
+```
 
 
 ## Configuración
 
-Para configuración necesitará algo como lo siguiente.
+Para la respectiva configuración necesitará realizar algo como lo siguiente.
 
 `.env`
 ```sh
