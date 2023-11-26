@@ -43,7 +43,12 @@ export default defineConfig({
           { text: 'Proceso', link: '/stack/process' },
           { text: 'Plantillas', link: '/stack/templates' }
         ]
-    }],
+    },{      
+      path: '/',      // optional, link of the title, which should be an absolute path and must exist
+      sidebarDepth: 1,    // optional, defaults to 1
+      items: [
+        { text: 'Contribución', link: '/contribution' }
+      ]}],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/ecanquiz/auto-crudx' }
     ],
