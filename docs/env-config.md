@@ -13,19 +13,19 @@ DB_PORT=5432
 DB_USER=postgres
 
 PATH_USER=/home/username
-PATH_BACKEND=my-backend
+PATH_BACKEND=backend-folder-name
 PATH_BACKEND_ROOT=app
-PATH_FRONTEND=my-frontend
+PATH_FRONTEND=frontend-folder-name
 PATH_FRONTEND_ROOT=src
 PATH_MODULE=User
 
 CRUD_SCHEMA=public
 CRUD_TABLE_MASTER=users
 CRUD_TABLE_MASTER_IS_HELPER=FALSE
-CRUD_EXCLUDE_FIELDS=created_at, updated_at, deleted_at
-CRUD_GENERATE=TRUE
 CRUD_STACK_BACKEND=demo-backend
 CRUD_STACK_FRONTEND=demo-frontend
+CRUD_EXCLUDE_FIELDS=created_at, updated_at, deleted_at
+CRUD_GENERATE=TRUE
 ```
 
 Cópielo y péguelo en la misma raiz del proyecto para crear el archivo de configuración del entorno `.env`. Tenga en cuenta que este archivo agrupa 3 secciones respectivamente (`DB`, `PATH` y `CRUD`) que describiremos a continuación.
@@ -51,7 +51,7 @@ Cópielo y péguelo en la misma raiz del proyecto para crear el archivo de confi
 
 - **`CRUD_SCHEMA`**: Nombre del esquema de la base de datos donde se encuetra la tabla en cuestión.
 - **`CRUD_TABLE_MASTER`**: Nombre de la tabla que se le generará el CRUD.
-- **`CRUD_TABLE_MASTER_IS_HELPER`**: Indica si se trata de una simple tabla para llenar una lista desplegable (elemento select html). 
+- **`CRUD_TABLE_MASTER_IS_HELPER`**: Indica si se trata de una simple tabla para llenar una lista desplegable (elemento _select_ **html**). 
 - **`CRUD_EXCLUDE_FIELDS`**: Campos que contiene la respectiva tabla que desea sean excluidos del CRUD.
 - **`CRUD_GENERATE`**: Indica si desea generar el CRUD o _debuggear_ el _dataJSON_ proveniente de la base de datos que alimenta el CRUD.
 - **`CRUD_STACK_BACKEND`**: Nombre de la carpeta de su [Stack para el Backend](./stack/folder.html#stack-my-backend).
@@ -125,7 +125,6 @@ Hagamos un simple vistazo a los otros archivos de configuración para revisar co
 
 ## `./src/config/db.ts`
 
-📃
 ```ts
 import dotenv from 'dotenv'
 
@@ -143,7 +142,7 @@ export default dbConfig;
 ```
 
 ## `./src/config/crud.ts`
-📃
+
 ```ts
 import dotenv from 'dotenv'
 
@@ -162,7 +161,6 @@ export default {
 
 ## `./src/config/output.ts`
 
-📃
 ```ts
 import dotenv from 'dotenv'
 

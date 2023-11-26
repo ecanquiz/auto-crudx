@@ -1,7 +1,6 @@
 # Herramientas Funcionales
 
-Al aplicar la configuración del [depurador de código](../code-debugging.html) se mostrarán en pantalla las herramientas funcionales que brinda `autocrudx-tools`.
-
+>Al aplicar la configuración del [depurador de código](../code-debugging.html) se mostrarán en pantalla las herramientas funcionales que brinda `autocrudx-tools`.
 ```sh
 # omitted for brevity ...
 CRUD_GENERATE=FALSE
@@ -26,6 +25,7 @@ Tenga en cuenta las funciones del objeto `fn` como herramientas para generar CRU
 
 ## `fn.addCommaToArr`
 
+>Con la función `fn.addCommaToArr()` puede renderizar un arreglo separado por coma (`","`) a excepción del útimo elemento.
 ```ts
 // function signature
 const fn = {  
@@ -34,7 +34,7 @@ const fn = {
 }
 ```
 
-Con la función `fn.addCommaToArr()` puede renderizar un arreglo separado por coma (`","`) a excepción del útimo elemento. Esta función recibe 3 argumentos:
+Esta función recibe 3 argumentos:
 
 1. **El arreglo que desea recorrer**.
 2. **El índice actual del arreglo**.
@@ -67,11 +67,7 @@ Tenga en cuenta cómo en el último elemento no se colocó la coma (`","`).
 
 ## `fn.foreignTableName`
 
-El propósito de la función `fn.foreignTableName()` es devolver, en el caso de existir, el nombre de la actual tabla asociada a la tabla master. 
-
-Dicha función recibe como primer argumento un `string` representando el `columnName` de la tabla master que se asocia a la actual tabla foranea. Y como segundo argumento un arreglo tipo `TableMasterForeignKeysAssoc` con información de todas las tablas asociadas a la tabla master.
-
-
+>El propósito de la función `fn.foreignTableName()` es devolver, en el caso de existir, el nombre de la actual tabla asociada a la tabla master. Dicha función recibe como primer argumento un `string` representando el `columnName` de la tabla master que se asocia a la actual tabla foranea. Y como segundo argumento un arreglo tipo `TableMasterForeignKeysAssoc` con información de todas las tablas asociadas a la tabla master.
 ```ts
 // function signature
 const fn = {
@@ -189,9 +185,7 @@ Una vez que se posee el nombre de la tabla asociativa `"countries"` basta con en
 
 ## `fn.singular`
 
-La función `fn.singular()` devuelve el singular de una palabra en inglés.
-
-
+>La función `fn.singular()` devuelve el singular de una palabra en inglés.
 ```ts
 // function signature
 const fn = {
@@ -203,6 +197,7 @@ const fn = {
 
 ## `fn.uCamelCase`
 
+>La función `fn.uCamelCase()` devuelve una palabra en formato **_CamelCase_** empezando con la primera letra en mayúscula.
 ```ts
 // function signature
 const fn = {
@@ -252,9 +247,7 @@ Tenga en cuenta que, en ingles, el singular de `people` es igual a `person`.
 
 ## `fn.v.excludeFields`
 
-La función `fn.v.excludeFields()` valida que el valor `column_name` (tipo `string`) pasado como argumento,  no sea `created_at`, `updated_at` ni tampoco `deleted_at`.
-
-  
+>La función `fn.v.excludeFields()` valida que el valor `column_name` (tipo `string`) pasado como argumento,  no sea `created_at`, `updated_at` ni tampoco `deleted_at`.  
 ```ts
 // function signature
 const fn = {
@@ -293,9 +286,7 @@ protected $fillable = [
 
 ## `fn.v.noIdAndExcludeFields`
 
-La función `fn.v.noIdAndExcludeFields()` valida que el valor `column_name` (tipo `string`) pasado como argumento,  no sea `created_at`, `updated_at`, `deleted_at` ni tampoco `id`.
-
-  
+>La función `fn.v.noIdAndExcludeFields()` valida que el valor `column_name` (tipo `string`) pasado como argumento,  no sea `created_at`, `updated_at`, `deleted_at` ni tampoco `id`.  
 ```ts
 // function signature
 const fn = {

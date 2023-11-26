@@ -28,7 +28,7 @@ PATH_FRONTEND_ROOT=resources
 
 ---
 
-La carpeta `stack` es el espacio indicado para construir específicamente todo lo relacionado con los CRUDs.
+La carpeta `stack` es el espacio indicado para construir específicamente todo lo relacionado con sus propios CRUDs.
 
 ```txt{3}
 src/
@@ -37,7 +37,7 @@ src/
 └── app.ts
 ```
 
-Con el propósito de mantener un mejor orden, se separa principalmente en dos carpetas.
+Con el propósito de mantener un mejor orden, está separa principalmente en dos carpetas.
 
 ```txt{4,5}
 src/
@@ -47,6 +47,32 @@ src/
 |   └── my-frontend/
 └── app.ts
 ```
+
+Tenga en cuenta que también puede ir creando más de un `stack`, si así lo desea.
+
+```txt{4,5}
+src/
+├── config/
+├── stack/
+|   ├── backend-laravel/
+|   ├── backend-nest/
+|   ├── frontend-react/
+|   └── frontend-vue/
+└── app.ts 
+```
+
+Asegúrese de especificar en la [configuración](../env-config.html) cuáles usar en su respectivo momento.
+
+📃`.env`
+```sh
+# omitted for brevity ...
+PATH_BACKEND=backend-folder-name
+# omitted for brevity ...
+PATH_FRONTEND=frontend-folder-name
+# omitted for brevity ...
+```
+
+Veamos  que contienen cada uno de ellos.
 
 ## `stack/my-backend/`
 

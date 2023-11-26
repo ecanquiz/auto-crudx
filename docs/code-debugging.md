@@ -13,8 +13,7 @@ Si entra y revisa el archivo [`src/app.ts`](/app-ts-file.html) podrá observar u
 
 Con ello podemos revisar, los datos que estamos manejando.
 
-
-## Ejemplo Básico (configuración)
+## Desactivar CRUD y activar `console.log`
 
 Para revisar los datos que estamos manejando, debemos avisarle antes a `autocrudx-tools` que en ese momento no queremos generar ningún **CRUD** porque solo queremos consultar los datos. Esto se hace a través de la configuración, estableciendo `CRUD_GENERATE` en `FALSE`.
 

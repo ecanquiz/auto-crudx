@@ -38,7 +38,7 @@ npm i -D autocrudx-tools
 
 ---
 
-Asegúrese de importar el módulo `autocrudx-tools` en los siguientes 5 archivos.
+Asegúrese de importar el módulo `autocrudx-tools` en los siguientes 5 archivos:
 
 - En el respectivo archivo principal `./src/app.ts`
 

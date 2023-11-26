@@ -51,11 +51,13 @@ export default async (
 
 - Tenga presente que el módulo `proccess` exporta una función `async` que devuelve una `Promise<void>`. Dicha función recibe un argumento llamado `paramsOmitOutput` tipo `Omit<ParamsAll, 'output'>` como parametro.
 
-- Lo primero que hace la función `proccess` es importar dinámicamente el módulo [`renderings.ts`](./renderings.html) en la constante `backend`.
+- Lo primero que hace la función `proccess` es importar dinámicamente el módulo [`renderings.ts`](./renderings.html) estableciéndolo en la constante `backend`.
 
 - Lo segundo que hace la función `proccess` es declarar la constante `params` para agrupar todos los parametros necesarios para el proceso en sí.
 
-- El resto del proceso se divide en 2 partes: La condición si el largo del arreglo de **Tablas Detalles del Maestro** (`params.tableDetailsOfMaster.length`) es diferente de cero (`0`) más el resto del proceso.
+- A continuación, el proceso se divide en 2 partes: 
+    1. La condición si se cumple que `params.tableDetailsOfMaster.length` es diferente de cero (`0`).
+    2. Más el resto del proceso.
 
 - Preste atención que para renderizar cualquier plantilla basta con ejecutar la función `rendering`, perteneciente al módulo `autocrudx-tools`, pasándole como argumento cualquiera de las funciones importadas dinámicamente desde el módulo `renderings` del correspondiente **_Stack_**.
 
@@ -116,25 +118,7 @@ export default async (
 }
 ```
 
-- Finalmente, tenga claro que para renderizar todas las **Tablas Detalles del Maestro**, cuando las hay, es decir: si se cumple que  `(params.tableDetailsOfMaster.length!==0)`, simplemente recorremos el correspondiente arreglo con el método `forEach` de JavaScript.
-
-```ts
-// omitted for brevity ...
-params.tableDetailsOfMaster.forEach(function(table){
-  const paramsWhitDetail = {
-    ...params,
-    tableDetailsCurrent: (
-      table as unknown as tableDetailsOfMasterCustomized
-    )
-  }
-  rendering(myStackName.fooTemplateName(paramsWhitDetail))
-  rendering(myStackName.barTemplateName(paramsWhitDetail))
-  // omitted for brevity ...     
-})
-// omitted for brevity ...
-```
-
-Tome en cuenta cuando recorra el arreglo `params.tableDetailsOfMaster`, que por cada `table` detalles "actual" se creará una constante llamada `paramsWhitDetail` para ser pasada como argumento respectivamente. Siéntase libre de colocarle el nombre que desee, con tal y cumpla con el tipado correspondiente.
+Siéntase libre de colocarle el nombre que desee, con tal y cumpla con su tipado correspondiente.
 
 ```ts{8,9,10,11,12,13}
 type Rendering = {
@@ -152,3 +136,22 @@ const rendering: ({
 }: Rendering) => void
 ```
 
+- Finalmente, tenga claro que para renderizar todas las `tableDetailsOfMaster`, cuando las hay, es decir: si se cumple que  `(params.tableDetailsOfMaster.length!==0)`, simplemente recorremos el correspondiente arreglo con el método `forEach` de JavaScript.
+
+```ts{2}
+// omitted for brevity ...
+params.tableDetailsOfMaster.forEach(function(table){
+  const paramsWhitDetail = {
+    ...params,
+    tableDetailsCurrent: (
+      table as unknown as tableDetailsOfMasterCustomized
+    )
+  }
+  rendering(myStackName.fooTemplateName(paramsWhitDetail))
+  rendering(myStackName.barTemplateName(paramsWhitDetail))
+  // omitted for brevity ...     
+})
+// omitted for brevity ...
+```
+
+Tome en cuenta cuando recorra el arreglo `params.tableDetailsOfMaster`, que por cada `tableDetailsCurrent` se creará una constante llamada `paramsWhitDetail` para ser pasada como argumento respectivamente.
