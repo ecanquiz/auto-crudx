@@ -1,0 +1,1 @@
+import{_ as e,o,c as r,S as a}from"./chunks/framework.233e4693.js";const _=JSON.parse('{"title":"Contribución","description":"","frontmatter":{},"headers":[],"relativePath":"contribution.md","filePath":"contribution.md"}'),t={name:"contribution.md"},c=a("",7),s=[c];function n(i,u,l,d,p,m){return o(),r("div",null,s)}const g=e(t,[["render",n]]);export{_ as __pageData,g as default};
