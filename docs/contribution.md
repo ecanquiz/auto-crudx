@@ -10,14 +10,14 @@ Para nuevas características es mejor discutir el caso de uso y los detalles de 
 
 2. Posibles correcciones de errores, mejoras y nuevas características en el proyecto [AutoCRUDx](https://github.com/ecanquiz/node-auto-crudx).
 
-:::info Importante
+:::tip Importante
 Con **_AutoCRUDx_** usted puede crear su propio generador de CRUD de manera privada (solo para usted y los suyos), siéntase libre para ello.
 
 >Sin embargo, queda usted invitado a contribuir con este proyecto de código abierto.
 
 Actualmente, **_AutoCRUDx_** cuenta con dos **_stacks_** públicos orientados a arquitectura de microservicios (con Laravel y Vue respectivamente). 
 
-- **El primero** fue diseñado bajo una arquitectura personalizada bajo la visión de un producto mínimo viable. 
+- **El primero** fue diseñado bajo una arquitectura personalizada bajo la visión de un Producto Mínimo Viable. 
 - Mientras que **el segundo** fue creado solo como ejemplo básico para este tutorial.
 
 >Siéntase libre de colaborar con cualquier tipo de contribución al respecto (correciones de errores, refactorización del diseño, nuevas características, pruebas automatizadas, etc.).
@@ -25,4 +25,8 @@ Actualmente, **_AutoCRUDx_** cuenta con dos **_stacks_** públicos orientados a 
 Incluso, sería genial la creación de algún otro **_stack_** bajo lenguajes o frameworks distintos. No dude en ponerse en contacto y establecer una relación ganar/ganar. 
 :::
 
->Comparte (y construye) tu experiencia.
+:::info Nota
+Si encuentras algún detalle en esta documentación que creas que se puede corregir o mejorar, no dudes en ponerte en contacto. Gracias de antemano !
+:::
+
+>¡ Comparte (y construye) tu experiencia... !
