@@ -1,8 +1,8 @@
 # Plantillas
 
->En este apartado crearemos las plantillas necesarias para hacer un CRUD de Tareas.
+>En este apartado crearemos las plantillas necesarias para hacer un [ejemplo del CRUD tipo Intermedio](../get-start.html#_2°-crud-intermedio-ejemplo).
 
-Imagine que usted creo una tabla llamada `tasks` a partir de una migración de Laravel como la siguiente.
+Imagine que usted creo en una base de datos PostgreSQL una tabla llamada `tasks` a partir de una migración de Laravel como la siguiente.
 
 ```php
 <?php

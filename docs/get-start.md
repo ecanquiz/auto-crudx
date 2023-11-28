@@ -1,5 +1,9 @@
 # Comenzar
 
+:::warning Advertencia
+Este proyecto de código abierto está creado bajo la visión de un Producto Mínimo Viable. Serías bienvenido si quisieras [contribuir](./contribution.html) de alguna manera.
+:::
+
 ## ¿ Qué es un CRUD ?
 
 En informática, [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) es el acrónimo de _"Crear"_, _"Leer"_, _"Actualizar"_ y _"Borrar"_, (del original en inglés, _Create, Read, Update and Delete_), que se usa para referirse a las funciones básicas en bases de datos o la capa de persistencia en un software.
