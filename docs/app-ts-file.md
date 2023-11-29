@@ -26,7 +26,7 @@ main(
 
 El paquete [`module-alias`](https://www.npmjs.com/package/module-alias) se usa para crear alias de directorios y registrar rutas de módulos personalizadas en NodeJS. Simplemente es para agregar orden a nuestro programa.
 
-Luego importamos el módulo `congig` para obtener todo el [entorno de configuración](./env-config.html) del prograna y pasarlo como primer parámetro a la función `main` del módulo [`autocrudx-tools`](./autocrudx-tools/import-autocrudx-tools.html) quien será el encargado de facilitarnos las herramientas para construir nuestro **AutoCRUD**.
+Luego importamos el módulo `congig` para obtener todo el [entorno de configuración](./env-config.html) del prograna y pasarlo como primer parámetro a la función `main` del módulo [`autocrudx-tools`](./autocrudx-tools/import-autocrudx-tools.html) quien será el encargado de facilitarnos las herramientas para construir nuestro **_AutoCRUD_**.
 
 El segundo parametro es un `callback` que nos facilitará la [depuración del código](./code-debugging.html) en el proceso de construcción de los CRUDs.
 

@@ -2,7 +2,7 @@
 
 ## Archivo `.env`
 
-En la raíz del proyecto **Auto-CRUDx**, hubique y abra siguiente archivo.
+En la raíz del proyecto **Auto-CRUDx**, ubique y abra el siguiente archivo.
 
 📃`.env.example`
 ```sh
@@ -13,17 +13,17 @@ DB_PORT=5432
 DB_USER=postgres
 
 PATH_USER=/home/username
-PATH_BACKEND=backend-folder-name
+PATH_BACKEND=my-backend-folder-name
 PATH_BACKEND_ROOT=app
-PATH_FRONTEND=frontend-folder-name
+PATH_FRONTEND=my-frontend-folder-name
 PATH_FRONTEND_ROOT=src
-PATH_MODULE=User
+PATH_MODULE=
 
 CRUD_SCHEMA=public
 CRUD_TABLE_MASTER=users
 CRUD_TABLE_MASTER_IS_HELPER=FALSE
-CRUD_STACK_BACKEND=demo-backend
-CRUD_STACK_FRONTEND=demo-frontend
+CRUD_STACK_BACKEND=my-backend-stack-name
+CRUD_STACK_FRONTEND=my-frontend-stack-name
 CRUD_EXCLUDE_FIELDS=created_at, updated_at, deleted_at
 CRUD_GENERATE=TRUE
 ```
@@ -33,7 +33,7 @@ Cópielo y péguelo en la misma raiz del proyecto para crear el archivo de confi
 ## Descripción de sección `DB`
 
 - **`DB_DATABASE`:** Nombre de la base de datos.
-- **`DB_HOST`**: IP de la máquina anfitriona donde se hospeda el proyecto.
+- **`DB_HOST`**: **_IP_** de la máquina donde se hospeda la base de datos.
 - **`DB_PASSWORD`**: _Password_ de la base de datos.
 - **`DB_PORT`** : Puerto por donde escucha la base de datos.
 - **`DB_USER`**: Usuario de la base de datos.
@@ -41,26 +41,27 @@ Cópielo y péguelo en la misma raiz del proyecto para crear el archivo de confi
 ## Descripción de sección `PATH`
 
 - **`PATH_USER`**: Ruta del usuario en la máquina anfitriona.
-- **`PATH_BACKEND`**: Carpeta(s) donde está alojado el `scaffold` de su _backend_.
+- **`PATH_BACKEND`**: Ruta de la carpeta donde se generará el respectivo código del CRUD correspondiente a su **_backend_**.
 - **`PATH_BACKEND_ROOT`**: Nombre de la carpeta, dentro del `PATH_BACKEND`, donde se escribirá el correspondiente código generado.
-- **`PATH_FRONTEND`**: Carpeta(s) donde está alojado el `scaffold` de su _frontend_.
+- **`PATH_FRONTEND`**: Ruta de la carpeta donde se generará el respectivo código del CRUD correspondiente a su **_frontend_**.
 - **`PATH_FRONTEND_ROOT`**: Nombre de la carpeta, dentro del `PATH_FRONTEND`, donde se escribirá el correspondiente código generado.
-- **`PATH_MODULE`**: Si está usando estructura modular, puede suministrar el nombre del módulo.
+- **`PATH_MODULE`**: Si está usando estructura modular, indique el nombre del módulo en cuestión.
 
 ## Descripción de sección `CRUD`
 
-- **`CRUD_SCHEMA`**: Nombre del esquema de la base de datos donde se encuetra la tabla en cuestión.
-- **`CRUD_TABLE_MASTER`**: Nombre de la tabla que se le generará el CRUD.
-- **`CRUD_TABLE_MASTER_IS_HELPER`**: Indica si se trata de una simple tabla para llenar una lista desplegable (elemento _select_ **html**). 
-- **`CRUD_EXCLUDE_FIELDS`**: Campos que contiene la respectiva tabla que desea sean excluidos del CRUD.
-- **`CRUD_GENERATE`**: Indica si desea generar el CRUD o _debuggear_ el _dataJSON_ proveniente de la base de datos que alimenta el CRUD.
+- **`CRUD_SCHEMA`**: Nombre del esquema de la base de datos donde se encuetra la tabla a la que se le pretende generar el CRUD.
+- **`CRUD_TABLE_MASTER`**: Nombre de la tabla a la que se le pretende generar el CRUD.
+- **`CRUD_TABLE_MASTER_IS_HELPER`**: Indica si se trata de una simple tabla para llenar una lista desplegable ([elemento `select` html](./get-start.html#_1°-crud-basico-ejemplo)). 
 - **`CRUD_STACK_BACKEND`**: Nombre de la carpeta de su [Stack para el Backend](./stack/folder.html#stack-my-backend).
 - **`CRUD_STACK_FRONTEND`**: Nombre de la carpeta de su [Stack para el Frontend](/stack/folder.html#stack-my-frontend).
+- **`CRUD_EXCLUDE_FIELDS`**: Campos que contiene la respectiva tabla que desea sean excluidos del CRUD del lado del **_frontend_**.
+- **`CRUD_GENERATE`**: En `TRUE` indica que desea generar el **_CRUD_**. Mientras que en `FALSE` indica que desea [_debuggear_ el _dataJSON_](./code-debugging.html) que alimenta el **_CRUD_**.
+
 
 
 ## Carpeta `config`
 
-En la carpeta `config` se capturan los parámetros del archivo `.env` enviándolos a JavaScript para ser exportados. 
+En la carpeta `config` se capturan los parámetros del archivo `.env` enviándolos a JavaScript para ser exportados a través de todo el programa. 
 
 ```txt{2}
 src/
