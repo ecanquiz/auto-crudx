@@ -11,7 +11,9 @@ El hecho de que sea desarrollado con **Node** no limita a que su propio **Genera
 Para instalarlo en su computadora dirijase a su correspondiente [repositorio](https://github.com/ecanquiz/node-auto-crudx) y haga click en el botón que dice `Use this template`.
 
 :::tip Importante
-Desde el preciso momento que descargue este proyecto en su máquina, este pasa a ser su propio **_Generador de CRUDs_**. Siga leyendo, este tutorial, para que lo adapte a sus requerimientos.
+Desde el preciso momento que descargue este proyecto en su máquina, este pasa a ser su propio **_Generador de CRUDs_**. Siga leyendo este tutorial para que lo adapte a sus requerimientos.
+
+Cabe señalar que **_AutoCRUD_** es un proyecto de codigo abierto, por lo tanto, quedan abiertas las puertas para [contribuir](./contribution.html) con el mismo.
 :::
 
 Una vez descargado el código, entre dentro de la carpeta del proyecto en la terminal y ejecute:
