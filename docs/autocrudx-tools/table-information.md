@@ -1,6 +1,6 @@
 # Información de Tablas
 
->Al aplicar la configuración del [depurador de código](../code-debugging.html), `autocrudx-tools` mostrará en pantalla la información de la tabla a la cual desea generar el CRUD. 
+>Al aplicar la configuración del [depurador de código](../code-debugging.html), `autocrudx-tools` mostrará en pantalla la información de la **_tabla_** a la cual desea generar el **_CRUD_**. 
 ```sh
 # omitted for brevity ...
 CRUD_GENERATE=FALSE
@@ -8,17 +8,17 @@ CRUD_GENERATE=FALSE
 
 Tenga en cuenta lo siguiente:
 
-- `tableMaster`: Nombre de la tabla maestro.
-- `tableStructure`: Estructura de la tabla maestro.
-- `tableDetailOfMaster`: Tabla(s) detalle(s) del maestro, si la(s) hubiera.
-- `tableMasterForeignKeysAssoc`: Tabla(s) asociativa(s) del maestro, si la(s) hubiera.
-- `tableStructureClean`: Estructura de la tabla maestro sin los campos `created_at`, `updated_at` y `deleted_at`.
+- `tableMaster`: Nombre de la **_tabla maestro_**.
+- `tableStructure`: Estructura de la **_tabla maestro_**.
+- `tableDetailOfMaster`: **_Tabla(s) detalle(s) del maestro_**, si la(s) hubiera.
+- `tableMasterForeignKeysAssoc`: **_Tabla(s) asociativa(s) del maestro_**, si la(s) hubiera.
+- `tableStructureClean`: Estructura de la **_tabla maestro_** sin los campos `created_at`, `updated_at` y `deleted_at`.
 
 Veamos los ejemplos...
 
 ## Ejemplo Básico
 
->Este ejemplo es para generar un CRUD a una tabla llamada `countries`. Recuerde antes aplicar la configuración del [depurador de código](../code-debugging.html) para mostrar en pantalla la información de la tabla.
+>Este ejemplo es para generar un **_CRUD_** a una **_tabla_ maestro** llamada `countries`. Recuerde antes aplicar la configuración del [depurador de código](../code-debugging.html) para mostrar en pantalla la información de la tabla.
 ```sh
 # omitted for brevity ...
 CRUD_TABLE_MASTER=countries
@@ -95,7 +95,7 @@ Tenga en cuenta que para este ejemplo, `autocrudx-tools` arrojó información de
 
 ## Ejemplo Intermedio
 
->Este ejemplo es para generar un CRUD a una tabla llamada `people`. Recuerde antes aplicar la configuración del [depurador de código](../code-debugging.html) para mostrar en pantalla la información de la tabla.
+>Este ejemplo es para generar un **_CRUD_** a una **_tabla_ maestro** llamada `people`. Recuerde antes aplicar la configuración del [depurador de código](../code-debugging.html) para mostrar en pantalla la información de la tabla.
 ```sh
 # omitted for brevity ...
 CRUD_TABLE_MASTER=people
@@ -264,7 +264,7 @@ Tenga en cuenta que para este ejemplo, `autocrudx-tools` arrojó información de
 
 ## Ejemplo Avanzado
 
->Este ejemplo es para generar un CRUD a una tabla llamada `meetings`. Recuerde antes aplicar la configuración del [depurador de código](../code-debugging.html) para mostrar en pantalla la información de la tabla.
+>Este ejemplo es para generar un **_CRUD_** a una **_tabla_ maestro** llamada `meetings`. Recuerde antes aplicar la configuración del [depurador de código](../code-debugging.html) para mostrar en pantalla la información de la tabla.
 ```sh
 # omitted for brevity ...
 CRUD_TABLE_MASTER=meetings
@@ -616,4 +616,4 @@ Ahora `autocrudx-tools` mostrará un JSON como el siguiente.
 
 ---
 
->En el momento que conocemos cómo trabajar con las [herramientas funcionales](./functional-tools.html) y cómo buscar la información de tablas, es tiempo de pasar a desarrollar nuestra [carpeta stack](../stack/folder.html).
+>En el momento que se conoce **cómo** trabajar con las [herramientas funcionales](./functional-tools.html) y **cómo** buscar la información de tablas, ya es tiempo de pasar a desarrollar nuestro propio **_Generador de CRUDs_** dentro de la [carpeta stack](../stack/folder.html).

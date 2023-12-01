@@ -6,7 +6,7 @@
 CRUD_GENERATE=FALSE
 ```
 
-Tenga en cuenta las funciones del objeto `fn` como herramientas para generar CRUDs.
+**Tenga en cuenta las funciones del objeto `fn` como herramientas para generar _CRUDs_.**
 
 ```json
 {
@@ -67,7 +67,11 @@ Tenga en cuenta cómo en el último elemento no se colocó la coma (`","`).
 
 ## `fn.foreignTableName`
 
->El propósito de la función `fn.foreignTableName()` es devolver, en el caso de existir, el nombre de la actual tabla asociada a la tabla master. Dicha función recibe como primer argumento un `string` representando el `columnName` de la tabla master que se asocia a la actual tabla foranea. Y como segundo argumento un arreglo tipo `TableMasterForeignKeysAssoc` con información de todas las tablas asociadas a la tabla master.
+>El propósito de la función `fn.foreignTableName()` es devolver, en el caso de existir, el nombre de la actual **_tabla asociada_** a la **_tabla master_**.
+
+>Dicha función recibe como primer argumento un `string` representando el `columnName` de la **_tabla master_** que se asocia a la **_actual tabla foranea_**.
+
+>Y como segundo argumento un arreglo tipo `TableMasterForeignKeysAssoc` con información de **_todas las tablas asociadas_** a la **_tabla master_**.
 ```ts
 // function signature
 const fn = {
@@ -80,7 +84,7 @@ const fn = {
 }
 ```
 
-Imagine el ejemplo estructural de una tabla master de nombre `people` unida internamente a través del campo `country_id` tipo `bigint` a una tabla asociativa llamada `countries` .
+Imagine el ejemplo estructural de una **_tabla master_** de nombre `people` unida internamente a través del campo `country_id` tipo `bigint` a una **_tabla asociativa_** llamada `countries` .
 
 
 ```json{3,4,7,8,16,18,19}
@@ -337,3 +341,13 @@ public function rules(): array
 }
 ```
 
+---
+**En pocas palabras...** 
+>Hacer esto:
+```txt
+if (!['id', 'created_at', 'updated_at', 'deleted_at'].includes(field.column_name))
+```
+>Hace lo mismo que esto:
+```txt
+if (fn.v.noIdAndExcludeFields(field.column_name))
+```
