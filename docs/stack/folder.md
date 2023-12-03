@@ -1,16 +1,16 @@
 # Carpeta `stack`
 
 :::warning Advertencia
-La actual versión del paquete `autocrudx-tools` está diseñada para crear `stacks` orientadas a micro-servicios. No obstante, funciona perfectamente igual al tratar con un `stack` **MVC**. 
+La actual versión del paquete `autocrudx-tools` está diseñada para crear `stacks` [SOA](https://en.wikipedia.org/wiki/Service-oriented_architecture). No obstante, funciona perfectamente igual al tratar con un `stack` [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller). Solo tiene que realizar algunos ajustes en el archivo `.env`. 
 
-Solo tiene que realizar algunos ajustes en el archivo `.env`. Suponga un proyecto **_Laravel MVC_**.
+Suponga un proyecto **_Laravel MVC_**...
 
 En vez de hacer esto:
 ```sh
 # omitted for brevity ...
-PATH_BACKEND=my-backend
+PATH_BACKEND=my-backend-folder-name
 PATH_BACKEND_ROOT=app
-PATH_FRONTEND=my-frontend
+PATH_FRONTEND=my-frontend-folder-name
 PATH_FRONTEND_ROOT=src
 # omitted for brevity ...
 ```
@@ -18,9 +18,9 @@ PATH_FRONTEND_ROOT=src
 Haga lo siguiente:
 ```sh
 # omitted for brevity ...
-PATH_BACKEND=my-mvc
+PATH_BACKEND=my-mvc-folder-name
 PATH_BACKEND_ROOT=app
-PATH_FRONTEND=my-mvc
+PATH_FRONTEND=my-mvc-folder-name
 PATH_FRONTEND_ROOT=resources
 # omitted for brevity ...
 ```
@@ -43,14 +43,14 @@ Con el propósito de mantener un mejor orden, está separa principalmente en dos
 src/
 ├── config/
 ├── stack/
-|   ├── my-backend/
-|   └── my-frontend/
+|   ├── backend-folder-name/
+|   └── frontend-folder-name/
 └── app.ts
 ```
 
 Tenga en cuenta que también puede ir creando más de un `stack`, si así lo desea.
 
-```txt{4,5}
+```txt
 src/
 ├── config/
 ├── stack/
@@ -76,6 +76,10 @@ Veamos  que contienen cada uno de ellos.
 
 ## `stack/my-backend/`
 
+:::info
+El nombre de carpeta `my-backend` es representativamente metafórico, siéntase libre de colocarle el nombre que desee.
+:::
+
 La carpeta `stack/my-backend/` posee una sub-carpeta llamada [`templates/`](./templates.html) con `N` archivos de plantillas más un archivo llamado [`process.ts`](./process.html) y otro llamado [`renderings.ts`](./renderings.html).
 
 
@@ -96,6 +100,10 @@ src/
 ```
 
 ## `stack/my-frontend/`
+
+:::info
+El nombre de carpeta `my-frontend` es representativamente metafórico, siéntase libre de colocarle el nombre que desee.
+:::
 
 La carpeta `stack/my-frontend/` tambien posee una sub-carpeta llamada [`templates/`](./templates.html) con `N` archivos de plantillas más un archivo llamado [`process.ts`](./process.html) y otro llamado [`renderings.ts`](./renderings.html).
 

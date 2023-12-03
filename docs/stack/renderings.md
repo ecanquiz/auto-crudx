@@ -19,9 +19,9 @@ En el correspondiente archivo `renderings.ts` se especifica información detalla
 ![renderins](../assets/renderins-1.jpg)
 
 
-El archivo `renderings.ts` exporta un objeto con información relevante de cada archivo que se genera.
+>El archivo `renderings.ts` exporta un objeto con información relevante de cada archivo que se genera.
 
-`./stack/my-backend/renderings.ts`
+📃`./stack/my-backend/renderings.ts`
 ```ts
 import config from '@config/index'
 import { singular, uCamelCase } from 'autocrudx-tools'
@@ -51,7 +51,11 @@ export default {
 }
 ```
 
-En este caso tenemos `masterController`, `masterModel` y `masterRoute`. Se requiere encarecidamente mandar por cada propiedad una función **_callback_** con los siguientes argumentos:
+>En este caso exportamos predeterminadamente un objeto con las propiedades `masterController`, `masterModel` y `masterRoute`.
+
+Los nombres de estas propiedades son respectivamente metafóricos, siéntase libre de colocar los nombres que considere conveniente. Puede quitar o agregar propiedades según la cantidad de archivos que desea generar.
+
+Se requiere encarecidamente mandar por cada propiedad una función **_callback_** con los siguientes argumentos:
 
 - `template`: Representa la localización de la plantilla que se renderizará.
 - `outputPath`: Especifica la ruta del directorio donde se generará el archivo renderizado.
@@ -69,7 +73,7 @@ Si desea conocer más sobre el tipado de `ParamsAll` y `Rendering` [consulte aqu
 
 Ahora veamos el ejemplo del lado del _frontend_:
 
-`./stack/frontend-folder-name/renderings.ts`
+📃`./stack/frontend-folder-name/renderings.ts`
 ```ts
 import config from '@config/index'
 import { singular, uCamelCase } from 'autocrudx-tools'
@@ -114,7 +118,9 @@ export default {
 
 ```
 
-En este caso tenemos `masterDatagrid`, `masterRoutes`, `masterServices`, `masterTypes` y `masterUseDatagrid`.
+>En este caso tenemos `masterDatagrid`, `masterRoutes`, `masterServices`, `masterTypes` y `masterUseDatagrid`.
 
->Tenga en cuenta que en este objeto puede agregar todas las propiedades según la cantidad de archivos que desea generar. Bien puede quitar, agregar propiedades o incluso, cambiarle el nombre según corresponda a su correspondiente `stack`.
+Tenga en cuenta que en este objeto puede agregar todas las propiedades según la cantidad de archivos que desea generar. Bien puede quitar, agregar propiedades o incluso, cambiarle el nombre según corresponda a su correspondiente `stack`.
+
+Tenga presente que también se requiere mandar por cada propiedad una función **_callback_** con los correspondientes argumentos anteriormente descritos.
 

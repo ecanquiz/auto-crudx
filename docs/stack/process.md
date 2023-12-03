@@ -1,13 +1,12 @@
 # Proceso
 
->Una vez declaradas las [renderizaciones](./renderings.html) establecemos el proceso.
+>Una vez declaradas las [renderizaciones](./renderings.html) se establece el proceso de generación.
 
 ## Archivo `process.ts`
 
-En el archivo `./stack/my-backend/process.ts` declaremos el proceso para generar el renderizado del **Backend**.
+En el archivo `./stack/my-backend/process.ts` se declara el proceso para generar el renderizado del **_backend_**.
 
-
-`./stack/my-backend/process.ts`
+📃`./stack/my-backend/process.ts`
 ```ts
 import config from '@config/index'
 import { rendering } from 'autocrudx-tools'
@@ -71,8 +70,11 @@ rendering(myStackName.bazTemplateName(params))
 
 En el ejemplo anterior `myStackName` sería algo como la constante `backend` declarada aguas arriba. En el próximo ejemplo note que esta constante no se llamará `backend` sino `frontend`. Usted puede colocarle en nombre que desee, ya que la forma no es relevante.
 
+---
 
-`./stack/frontend-folder-name/process.ts`
+En el archivo `./stack/my-backend/process.ts` se declara el proceso para generar el renderizado del **_frontend_**.
+
+📃`./stack/frontend-folder-name/process.ts`
 ```ts
 import config from '@config/index'
 import { rendering } from 'autocrudx-tools'
@@ -136,7 +138,7 @@ const rendering: ({
 }: Rendering) => void
 ```
 
-- Finalmente, tenga claro que para renderizar todas las `tableDetailsOfMaster`, cuando las hay, es decir: si se cumple que  `(params.tableDetailsOfMaster.length!==0)`, simplemente recorremos el correspondiente arreglo con el método `forEach` de JavaScript.
+- Finalmente, tenga claro que para renderizar todas las `tableDetailsOfMaster`, [cuando las hay]((../autocrudx-tools/table-information.html#ejemplo-avanzado)), es decir: si se cumple que `(params.tableDetailsOfMaster.length!==0)`, simplemente se recorre el correspondiente arreglo con el método `forEach` de JavaScript.
 
 ```ts{2}
 // omitted for brevity ...
