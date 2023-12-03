@@ -46,14 +46,13 @@ CRUD_STACK_FRONTEND=my-frontend-example
 ## omitted for brevity ...
 ```
 
-Empezaremos por las plantillas del **Backend**.
-
-
 ## `stack/my-backend-example`
+
+>Empezaremos con las plantillas del **_backend_**.
 
 Para el lado del _backend_ esta será la plantilla del **route**.
 
-`./src/stack/my-backend-example/templates/route`
+📃`./src/stack/my-backend-example/templates/route`
 ```txt
 <?php
 
@@ -72,7 +71,7 @@ Route::prefix('<%= tableMaster; %>')->group(function () {
 
 Esta plantilla deberá generar el siguiente archivo.
 
-`/home/username/crud-todo/api-laravel/app/Routes/apiTask.php`
+📃`/home/username/crud-todo/api-laravel/app/Routes/apiTask.php`
 ```php
 <?php
 
@@ -89,13 +88,15 @@ Route::prefix('tasks')->group(function () {
 });
 ```
 
+:::tip
 Tome en cuenta que las rutas es el único código que deberá cortar y pegar respectivamente en el lugar que corresponde. Es decir que, debe actualizar su correspondiente archivo `/home/username/crud-todo/api-laravel/routes/api.php` con el código anterior.
+:::
 
 ---
 
-Continuamos con el **modelo**. Este será el respectivo archivo.
+Continuamos con el **modelo**. Este será la respectivo plantilla.
 
-`./src/stack/my-backend-example/templates/model`
+📃`./src/stack/my-backend-example/templates/model`
 ```txt
 <?php
 
@@ -120,7 +121,7 @@ class <%= fn.uCamelCase(fn.singular(tableMaster)); %> extends Model
 
 Esta plantilla deberá generar el siguiente archivo.
 
-`/home/username/crud-todo/api-laravel/app/Models/Task.php`
+📃`/home/username/crud-todo/api-laravel/app/Models/Task.php`
 
 ```php
 <?php
@@ -147,7 +148,7 @@ class Task extends Model
 
 Concluimos el _backend_ con el **controlador**. Esta será el respectivo archivo de plantilla.
 
-`./src/stack/my-backend-example/templates/controller`
+📃`./src/stack/my-backend-example/templates/controller`
 ```txt
 <?php
 
@@ -217,7 +218,7 @@ class <%= fn.uCamelCase(fn.singular(tableMaster)); %>Controller extends Controll
 
 Esta plantilla deberá generar el siguiente archivo.
 
-`/home/username/crud-todo/api-laravel/app/Http/Controllers/TaskController.php`
+📃`/home/username/crud-todo/api-laravel/app/Http/Controllers/TaskController.php`
 ```php
 <?php
 
@@ -282,16 +283,14 @@ class TaskController extends Controller
 }
 ```
 
-Si ha llegado hasta aquí, entonces ya debe tener construido su respectivo código de la **API** que funcionará como **backend** para el **CRUD de Tareas**.
-
-
+>Si ha llegado hasta aquí, entonces ya debe tener construido su respectivo código de la **API** que funcionará como **_backend_** para el **_CRUD de Tareas_**.
 
 
 ## `stack/my-frontend-example`
 
 Para el lado del _frontend_ esta será la plantilla que genera la vista _datagrid_.
 
-`./src/stack/my-frontend-example/templates/masterDatagrid`
+📃`./src/stack/my-frontend-example/templates/masterDatagrid`
 
 ```txt
 <script lang="ts">
@@ -386,7 +385,7 @@ export default defineComponent({
 
 Esta plantilla deberá generar el siguiente archivo.
 
-`/home/username/crud-todo/spa-vue/src/views/Task/Index.vue`
+📃`/home/username/crud-todo/spa-vue/src/views/Task/Index.vue`
 ```vue
 <script lang="ts">
 import { defineComponent } from 'vue'
@@ -484,7 +483,7 @@ export default defineComponent({
 
 Esta será la plantilla que genera la vista _CreateOrEdit_.
 
-`./src/stack/my-frontend-example/templates/masterCreateOrEdit`
+📃`./src/stack/my-frontend-example/templates/masterCreateOrEdit`
 ```txt
 <script lang="ts">
 import { defineComponent } from 'vue'
@@ -559,7 +558,7 @@ export default defineComponent({
 
 Esta plantilla deberá generar el siguiente archivo.
 
-`/home/username/crud-todo/spa-vue/src/views/Task/CreateOrEdit.vue`
+📃`/home/username/crud-todo/spa-vue/src/views/Task/CreateOrEdit.vue`
 ```vue
 <script lang="ts">
 import { defineComponent } from 'vue'
@@ -636,7 +635,7 @@ export default defineComponent({
 
 Y esta será la plantilla que genera el componente _FormTask_.
 
-`./src/stack/my-frontend-example/templates/masterForm`
+📃`./src/stack/my-frontend-example/templates/masterForm`
 ```txt
 <script lang="ts">
 import { defineComponent } from 'vue'
@@ -684,7 +683,7 @@ export default defineComponent({
 ```
 Esta plantilla deberá generar el siguiente archivo.
 
-`/home/username/crud-todo/spa-vue/src/components/Task/FormTask.vue`
+📃`/home/username/crud-todo/spa-vue/src/components/Task/FormTask.vue`
 ```vue
 <script lang="ts">
 import { defineComponent } from 'vue'
@@ -729,3 +728,4 @@ export default defineComponent({
 </template>
 ```
 
+>Si ha llegado hasta aquí, entonces ya debe tener construido también su respectivo código de SPA que funcionará como **_frontend_** para el **_CRUD de Tareas_**.
