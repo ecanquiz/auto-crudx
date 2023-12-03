@@ -8,7 +8,7 @@ Para nuevas características es mejor discutir el caso de uso y los detalles de 
 
 1. Posibles correcciones de errores, mejoras y nuevas características en el paquete [AutoCRUDx-Tools](https://github.com/ecanquiz/autocrudx-tools).
 
-2. Posibles correcciones de errores, mejoras y nuevas características en el proyecto [AutoCRUDx](https://github.com/ecanquiz/node-auto-crudx).
+2. Posibles refactorizaciones y el desarrollo de nuevos `stacks` en el proyecto [AutoCRUDx](https://github.com/ecanquiz/node-auto-crudx). 
 
 :::tip Importante
 Con **_AutoCRUDx_** usted puede crear su propio generador de CRUD de manera privada (solo para usted y los suyos), siéntase libre para ello.
@@ -26,7 +26,7 @@ Incluso, sería genial la creación de algún otro **_stack_** bajo lenguajes o 
 :::
 
 :::info Nota
-Si encuentras algún detalle en esta documentación que creas que se puede corregir o mejorar, no dudes en ponerte en contacto. Gracias de antemano !
+Si encuentras algún detalle en esta documentación que crea que se puede corregir o mejorar, no dudes en ponerte en contacto. Gracias de antemano !
 :::
 
 >¡ Comparte (y construye) tu experiencia... !
