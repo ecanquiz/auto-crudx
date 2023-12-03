@@ -138,7 +138,7 @@ const rendering: ({
 }: Rendering) => void
 ```
 
-- Finalmente, tenga claro que para renderizar todas las `tableDetailsOfMaster`, [cuando las hay]((../autocrudx-tools/table-information.html#ejemplo-avanzado)), es decir: si se cumple que `(params.tableDetailsOfMaster.length!==0)`, simplemente se recorre el correspondiente arreglo con el método `forEach` de JavaScript.
+- Finalmente, tenga claro que para renderizar todas las `tableDetailsOfMaster`, [cuando las hay](../autocrudx-tools/table-information.html#ejemplo-avanzado), es decir: si se cumple que `(params.tableDetailsOfMaster.length!==0)`, simplemente se recorre el correspondiente arreglo con el método `forEach` de JavaScript.
 
 ```ts{2}
 // omitted for brevity ...
