@@ -2,7 +2,7 @@
 
 ## Archivo `.env`
 
-En la raíz del proyecto **Auto-CRUDx**, ubique y abra el siguiente archivo.
+En la raíz del proyecto **_Auto-CRUDx_**, ubique y abra el siguiente archivo.
 
 📃`.env.example`
 ```sh

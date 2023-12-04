@@ -116,7 +116,7 @@ Imagine el ejemplo estructural de una **_tabla master_** de nombre `people` unid
 }
 ```
 
-Probando un contexto de solo JavaScript seria algo como lo siguiente.
+Ejemplificando en un contexto de solo JavaScript seria algo como lo siguiente.
 
 ```js
 tableStructure.forEach(function(field) {
@@ -267,7 +267,7 @@ Imagine que desea establecer en el modelo los campos `fillable`.
 ```txt{2}
 protected $fillable = [<% tableStructure.forEach(function(field, index) {
   if  (fn.v.excludeFields(field.column_name)) {%>
-    '<%- field.column_name; %>'<%= fn.addCommaToArr(tableStructure, index, 0) -%>
+    '<%- field.column_name; %>'<%= fn.addCommaToArr(tableStructure, index, 3) -%>
 <%}});%> 
 ];
 ```
@@ -313,7 +313,7 @@ public function rules(): array
         <%
         tableStructure.forEach(function(field, index) {
         if  (fn.v.noIdAndExcludeFields(field.column_name)) { 
-        %>"<%- field.column_name; -%>" => ["required"]<%- fn.addCommaToArr(tableStructure, index, 0); -%> 
+        %>"<%- field.column_name; -%>" => ["required"]<%- fn.addCommaToArr(tableStructure, index, 4); -%> 
         <%}});%>
     ];
 }
