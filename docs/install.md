@@ -28,6 +28,10 @@ Ahora, para mantener la compilación mientras crea sus plantillas (para su **Gen
 tsc --watch
 ```
 
+:::info
+Las [plantillas](./stack/templates.html) no serán compliladas, no tiene ningún sentido que TypeScript compile las plantillas, recuerde que las plantillas generarán archivos de códigos para multiples lenguajes.
+:::
+
 Abra otra terminal en la misma carpeta del proyecto `node-auto-crudx` para ejecutar su Generador de CRUDs.
 
 

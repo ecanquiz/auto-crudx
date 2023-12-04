@@ -14,11 +14,13 @@ Tenga en cuenta lo siguiente:
 - `tableMasterForeignKeysAssoc`: **_Tabla(s) asociativa(s) del maestro_**, si la(s) hubiera.
 - `tableStructureClean`: Estructura de la **_tabla maestro_** sin los campos `created_at`, `updated_at` y `deleted_at`.
 
+>Con dicha información proveniente de la correspondiente base de datos es suficiente para construir los generadores de **_CRUDs_**.
+
 Veamos los ejemplos...
 
 ## Ejemplo Básico
 
->Este ejemplo es para generar un **_CRUD_** a una **_tabla_ maestro** llamada `countries`. Recuerde antes aplicar la configuración del [depurador de código](../code-debugging.html) para mostrar en pantalla la información de la tabla.
+>Este ejemplo es para generar un **_CRUD_** a una **_tabla maestro_** llamada `countries`. Recuerde antes aplicar la configuración del [depurador de código](../code-debugging.html) para mostrar en pantalla la información de la tabla.
 ```sh
 # omitted for brevity ...
 CRUD_TABLE_MASTER=countries
@@ -95,7 +97,7 @@ Tenga en cuenta que para este ejemplo, `autocrudx-tools` arrojó información de
 
 ## Ejemplo Intermedio
 
->Este ejemplo es para generar un **_CRUD_** a una **_tabla_ maestro** llamada `people`. Recuerde antes aplicar la configuración del [depurador de código](../code-debugging.html) para mostrar en pantalla la información de la tabla.
+>Este ejemplo es para generar un **_CRUD_** a una **_tabla maestro_** llamada `people`. Recuerde antes aplicar la configuración del [depurador de código](../code-debugging.html) para mostrar en pantalla la información de la tabla.
 ```sh
 # omitted for brevity ...
 CRUD_TABLE_MASTER=people
@@ -264,7 +266,7 @@ Tenga en cuenta que para este ejemplo, `autocrudx-tools` arrojó información de
 
 ## Ejemplo Avanzado
 
->Este ejemplo es para generar un **_CRUD_** a una **_tabla_ maestro** llamada `meetings`. Recuerde antes aplicar la configuración del [depurador de código](../code-debugging.html) para mostrar en pantalla la información de la tabla.
+>Este ejemplo es para generar un **_CRUD_** a una **_tabla maestro_** llamada `meetings`. Recuerde antes aplicar la configuración del [depurador de código](../code-debugging.html) para mostrar en pantalla la información de la tabla.
 ```sh
 # omitted for brevity ...
 CRUD_TABLE_MASTER=meetings

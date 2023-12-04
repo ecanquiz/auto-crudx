@@ -1,7 +1,9 @@
 # Comenzar
 
 :::warning Advertencia
-Este proyecto de código abierto está creado bajo la visión de un Producto Mínimo Viable. Serías bienvenido si quisieras [contribuir](./contribution.html) de alguna manera.
+Este proyecto de código abierto está creado bajo la visión de un Producto Mínimo Viable.
+
+[Eres bienvenido si deseas contribuir de alguna manera](./contribution.html).
 :::
 
 ## ¿ Qué es un CRUD ?
@@ -10,7 +12,7 @@ En informática, [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_d
 
 :::info Ejemplos
 
-Los siguientes ejemplos de **CRUDs** son creados a travéz de la herramienta ***Auto-CRUDx*** que está desarrollada en [Node](https://nodejs.org/). Pero su **_stack_**, tanto del _backend_ como del _frontend_, es generado para [Laravel](https://laravel.com/) y [Vue](https://vuejs.org/) respectivamente.
+Los siguientes ejemplos de **CRUDs** son creados a travéz del programa ***Auto-CRUDx***, que está desarrollada en [Node](https://nodejs.org/). Pero su **_stack_**, tanto del _backend_ como del _frontend_, es generado para [Laravel](https://laravel.com/) y [Vue](https://vuejs.org/) respectivamente.
 :::
 
 ## 1° CRUD Básico (ejemplo)
@@ -48,11 +50,11 @@ El código generado de ejemplos anteriores se basa en una arquitectura muy parti
 ## ¿ Qué es Auto-CRUDx ?
 
 :::tip Importante
-[Auto-CRUDx](https://github.com/ecanquiz/node-auto-crudx) brinda las herramientas para ayudarlo a crear su propio Generador de CRUDs Automático (según su propio **_stack_** de desarrollp y arquitectura particular). Por lo tanto, usted mismo debe diseñar sus plantillas según su criterio.
+[Auto-CRUDx](https://github.com/ecanquiz/node-auto-crudx) le ayudará a crear su propio **_Generador de CRUDs Automático_** (según su propio **_stack_** de desarrollp y arquitectura particular). Por lo tanto, usted mismo deberá diseñar sus [plantillas](./stack/templates.html) según su criterio.
 :::
 
 :::warning Advertencia
-***Auto-CRUDx*** no es un Generador de CRUDs por si mismo, más bien, es una herramienta que le facilitará a usted la construcción de su **Generador de CRUDs**. En otras palabras, ***Auto-CRUDx*** le ayudará a construir el suyo propio.
+***Auto-CRUDx*** no es un Generador de CRUDs por si mismo, más bien, es un programa que le facilitará a usted la construcción de su **Generador de CRUDs**. En otras palabras, ***Auto-CRUDx*** le ayudará a construir el suyo propio.
 
 ***Auto-CRUDx*** tampoco es una herramienta para construir _Scaffolds_. Por lo tanto, no genera _Layout_, _Sign In_, _Sign Up_, _Password Recovery_, etc. 
 :::
@@ -61,18 +63,17 @@ El código generado de ejemplos anteriores se basa en una arquitectura muy parti
 
 ![get-start](./assets/get-start-4.jpg)
 
->Tenga presente que el proyecto `node-auto-crudx` leerá su base de datos y escribirá el código generado aparte en otro(s) proyecto(s).
+>Tenga presente que el proyecto `node-auto-crudx` se conectará a la base de datos para leer las características de la tabla a la cual se le creará el correspondiente **_CRUD_** y escribirá el respectivo código generado, aparte, en otro(s) proyecto(s).
 
-El anterior diagrama muestra un **_stack_** orientado a micro-servicios, no obstante, funciona igual si se tratara de un **_stack_** MVC.
+El anterior diagrama muestra un **_stack_** de una arquitectura orientado a servicios (**_backend_** y **_frontend_** separados), no obstante, funciona igual si se tratara de un **_stack_** MVC.
 
 ## Requisitos
 
-Auto-CRUDx está desarrollado en [Node](https://nodejs.org/), por lo que es importante tener conocimientos mínimos del mismo y tenerlo instalado en su maquina.
+Auto-CRUDx está desarrollado en [Node](https://nodejs.org/), por lo que es importante tener conocimientos mínimos del mismo y tenerlo previamente instalado en su maquina.
 
 Además, usa como dependencia las Plantillas de JavaScript Integradas [EJS](https://www.npmjs.com/package/ejs). Por lo que también es fundamental leer la respectiva [documentación](https://ejs.co/).
 
 :::warning Advertencia
-La actual versión del **Auto-CRUx**, solo se alimenta de la información proveniente del diseño de sus tablas creadas en su bases de datos [PostgreSQL](https://www.postgresql.org/). Por lo que debe tener previamente instalado PostgreSQL en su máquina, así como también haber construido sus correspondientes tablas en dicha base de datos.
+La actual versión del **Auto-CRUx** (PMV), solo se alimenta de la información proveniente del diseño de tablas creadas en el sistema de gestión de bases de datos [PostgreSQL](https://www.postgresql.org/). Por lo que deberá tener previamente construidas sus correspondientes tablas en dicho sistema de gestión de bases de datos.
 :::
-
 

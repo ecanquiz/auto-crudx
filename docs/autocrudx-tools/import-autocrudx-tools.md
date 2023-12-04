@@ -1,16 +1,16 @@
 # Importar AutoCRUDx Tools
 
->Esta es la herramienta para crear generadores de CRUDs automáticos.
+>Esta es la herramienta que importa **_AutoCRUDx_** para crear generadores de **_CRUDs_** automáticos.
 
-**_AutoCRUDx Tools_** proporciona las herramientas para ayudarle a crear su propio generador CRUD automático (basado en su propia pila de desarrollo y arquitectura particular). **Por lo tanto, debes diseñar tú mismo tus plantillas según tu criterio**.
+**_AutoCRUDx Tools_** proporciona las herramientas para ayudarle a crear su propio generador **_CRUD_** automático (basado en su propia pila de desarrollo y arquitectura particular). **Por lo tanto, debes diseñar tú mismo tus plantillas según tu criterio**.
 
 :::warning Advertencia
-**_Auto CRUDx Tools_** no es un generador de CRUD en sí mismo, sino que es una herramienta que le facilitará la construcción de su generador de CRUD. En otras palabras, **_Auto CRUDx Tools_** le ayudará a crear el suyo propio.
+**_Auto CRUDx Tools_** no es un generador de **_CRUD_** en sí mismo, sino que es una herramienta que le facilitará la construcción de su generador de **_CRUD_**. En otras palabras, **_Auto CRUDx Tools_** le ayudará a crear el suyo propio.
 
-**_Auto CRUDx Tools_** tampoco es una herramienta para construir _Scaffolds_. Por lo tanto, no genera módulos ni componentes de _Layout_, _Sign In_, _Sign Up_, _Password Recovery_, etc.
+**_Auto CRUDx Tools_** tampoco es para construir _Scaffolds_, _Layout_, _Sign In_, _Sign Up_ ni _Password Recovery_.
 :::
 
-Si desea saber más sobre **_Auto CRUDx Tools_** [consulte aquí](https://github.com/ecanquiz/autocrudx-tools) el repositorio **_GitHub_**.
+Si desea saber más sobre **_Auto CRUDx Tools_** [consulte el repositorio](https://github.com/ecanquiz/autocrudx-tools).
 
 ---
 
@@ -74,7 +74,7 @@ import type {
 ---
 
 
-Es momento de saber más sobre **_AutoCRUDx Tools_**, específicamente:
+Ya es momento de saber más sobre **_AutoCRUDx Tools_**, específicamente:
 
 - [Las Herramientas Funcionales (JSON)](./functional-tools.html).
 - [La Información de Tablas](./table-information.html).
